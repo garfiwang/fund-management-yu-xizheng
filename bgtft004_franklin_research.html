@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>富蘭克林華美多重資產收益基金 (BGTFT004) · 獨立研究專頁 - YU 基金觀察</title>
+  <meta name="theme-color" content="#f8fafc">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="app-container">
+
+    <!-- Header Navigation -->
+    <header class="header-nav">
+      <div class="brand-section">
+        <a href="index.html" class="brand-icon" style="text-decoration: none; background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);">
+          <i class="fa-solid fa-arrow-left"></i>
+        </a>
+        <div>
+          <h1 class="brand-title">富蘭克林華美多重資產收益基金 · 獨立研究報告</h1>
+          <div class="brand-subtitle">
+            <span>標的代碼: <strong class="brand-pill">BGTFT004</strong></span>
+            <span>客戶代號: <strong class="brand-pill">YU</strong></span>
+            <span>資產角色: <strong style="color: var(--color-purple);">30% 穩健平衡收息標的（月配現金）</strong></span>
+          </div>
+        </div>
+      </div>
+      <div class="header-status">
+        <nav class="nav-links-group">
+          <a href="index.html" class="nav-link-btn"><i class="fa-solid fa-house"></i> 總覽儀表板</a>
+          <a href="tctpl003_tw50_research.html" class="nav-link-btn"><i class="fa-solid fa-arrow-trend-up"></i> 台股50</a>
+          <a href="bgtal009_allianz_research.html" class="nav-link-btn"><i class="fa-solid fa-leaf"></i> 安聯收益</a>
+          <a href="bgtab005_alliancebernstein_research.html" class="nav-link-btn"><i class="fa-solid fa-shield-halved"></i> 聯博多元</a>
+          <a href="bgtft004_franklin_research.html" class="nav-link-btn active"><i class="fa-solid fa-gem"></i> 富蘭克林</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Fund Hero Information Card -->
+    <div class="fund-hero-card">
+      <div class="fund-hero-header">
+        <div class="fund-title-box">
+          <h2>
+            <span>富蘭克林華美多重資產收益基金-新台幣(分配型)</span>
+            <span class="badge badge-purple">扣費順位 4 (最底層守護)</span>
+            <span class="badge badge-gold">配置 30%</span>
+          </h2>
+          <div class="fund-meta-tags">
+            <span class="badge badge-subtle">代號：BGTFT004</span>
+            <span class="badge badge-subtle">經理公司：富蘭克林華美投信</span>
+            <span class="badge badge-subtle">保管機構：第一商業銀行</span>
+            <span class="badge badge-subtle">風險等級：RR3</span>
+            <span class="badge badge-subtle">計價幣別：新臺幣</span>
+            <span class="badge badge-emerald">配息政策：月配現金（匯出至指定帳戶）</span>
+          </div>
+        </div>
+        <div>
+          <a href="index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> 返回總儀表板</a>
+        </div>
+      </div>
+
+      <!-- YU 持倉狀況即時看板 -->
+      <div class="fund-stats-strip">
+        <div class="stat-item">
+          <span class="stat-item-label">持有單位數餘額</span>
+          <span class="stat-item-value">70,944.6809 單位</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-item-label">買入平均成本 (10/27)</span>
+          <span class="stat-item-value">NT$ 8.4600</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-item-label">最新官方淨值 (10/27)</span>
+          <span class="stat-item-value" style="color: var(--color-purple);">NT$ 8.4600</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-item-label">目前帳戶現值</span>
+          <span class="stat-item-value">NT$ 600,192</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-item-label">預估每月配息金額</span>
+          <span class="stat-item-value text-purple">約 NT$ 3,400 ~ 3,900</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 雙欄架構：走勢圖 + 資產配置拆解 -->
+    <div class="dashboard-grid">
+      
+      <!-- 淨值走勢圖 -->
+      <div class="card">
+        <div class="card-header-flex">
+          <div class="card-title">
+            <i class="fa-solid fa-chart-line"></i>
+            <span>單位淨值走勢歷程 (2026/10)</span>
+          </div>
+          <span class="badge badge-purple">評價穩健平滑</span>
+        </div>
+        <div class="chart-wrapper">
+          <canvas id="franklinNavChart"></canvas>
+        </div>
+      </div>
+
+      <!-- 資產配置類別比例 -->
+      <div class="card">
+        <div class="card-header-flex">
+          <div class="card-title">
+            <i class="fa-solid fa-sliders"></i>
+            <span>多元資產大類配置比率</span>
+          </div>
+          <span class="badge badge-primary">債股平衡佈局</span>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 14px; margin-top: 8px;">
+          <div>
+            <div style="display: flex; justify-content: space-between; font-size: 13px; font-weight: 700;">
+              <span><i class="fa-solid fa-building-shield" style="color: #7c3aed;"></i> 固定收益債券 (公債/投資級/高收債)</span>
+              <span>52.0%</span>
+            </div>
+            <div class="holdings-progress-bar">
+              <div class="holdings-progress-fill" style="width: 52.0%; background: #7c3aed;"></div>
+            </div>
+          </div>
+          <div>
+            <div style="display: flex; justify-content: space-between; font-size: 13px; font-weight: 700;">
+              <span><i class="fa-solid fa-chart-pie" style="color: #8b5cf6;"></i> 高股息股票 (Dividend Stocks)</span>
+              <span>38.5%</span>
+            </div>
+            <div class="holdings-progress-bar">
+              <div class="holdings-progress-fill" style="width: 38.5%; background: #8b5cf6;"></div>
+            </div>
+          </div>
+          <div>
+            <div style="display: flex; justify-content: space-between; font-size: 13px; font-weight: 700;">
+              <span><i class="fa-solid fa-award" style="color: #a78bfa;"></i> 優先股 / 特別股 (Preferreds)</span>
+              <span>6.0%</span>
+            </div>
+            <div class="holdings-progress-bar">
+              <div class="holdings-progress-fill" style="width: 6.0%; background: #a78bfa;"></div>
+            </div>
+          </div>
+          <div>
+            <div style="display: flex; justify-content: space-between; font-size: 13px; font-weight: 700;">
+              <span><i class="fa-solid fa-coins" style="color: #94a3b8;"></i> 現金與約當現金 (Cash)</span>
+              <span>3.5%</span>
+            </div>
+            <div class="holdings-progress-bar">
+              <div class="holdings-progress-fill" style="width: 3.5%; background: #cbd5e1;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 投資策略與保單定位說明 -->
+    <div class="card" style="margin-bottom: 24px;">
+      <div class="card-title" style="margin-bottom: 14px;">
+        <i class="fa-solid fa-gem"></i>
+        <span>在客戶 YU 保單中的壓軸保護與現金流機制</span>
+      </div>
+      <div style="color: var(--text-secondary); font-size: 14px; line-height: 1.8;">
+        <p><strong>1. 全球老牌旗艦資產管理品牌加持</strong>：富蘭克林坦伯頓以深厚固定收益底蘊著稱。本基金配置 52% 債券部位（包括美國國庫券、高評級公司債與非投資等級債）搭配 38.5% 穩健現金流大型股（如摩根大通、強生、微軟等），著眼長期收益穩定度。</p>
+        <p style="margin-top: 8px;"><strong>2. 扣費順位第 4（終極護城河）</strong>：本標的被排在保單扣費順位之最末（順位 4）。除非順位 1 (台股50)、順位 2 (安聯)、順位 3 (聯博) 皆無單位數可扣，否則絕不觸碰此檔，因此能發揮最大的「資產防護錨」作用。</p>
+        <p style="margin-top: 8px;"><strong>3. 「配現金」月月入帳</strong>：YU 投資 NT$ 600,192 元，持有 70,944 單位數，預估每月產出 NT$ 3,400~3,900 元現金撥回。與安聯、聯博合計，YU 專案之三大多重資產每個月將可穩定產生約 <strong>NT$ 10,500 ～ 12,000</strong> 的現金流挹注！</p>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-info">
+      <p>YU · 基金觀察與保單資產管理系統 | 標的代碼：BGTFT004</p>
+      <a href="index.html" class="table-link-btn" style="margin-top: 8px;"><i class="fa-solid fa-house"></i> 回到總儀表板</a>
+    </footer>
+
+  </div>
+
+  <script>
+    // 繪製富蘭克林走勢圖
+    document.addEventListener("DOMContentLoaded", () => {
+      const ctx = document.getElementById("franklinNavChart").getContext("2d");
+      new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: ['10/01', '10/05', '10/10', '10/15', '10/20', '10/25', '10/27 (買入)'],
+          datasets: [{
+            label: '官方單位淨值 (TWD)',
+            data: [8.42, 8.43, 8.44, 8.45, 8.455, 8.458, 8.4600],
+            borderColor: '#7c3aed',
+            backgroundColor: 'rgba(124, 58, 237, 0.08)',
+            borderWidth: 2.5,
+            fill: true,
+            tension: 0.25,
+            pointBackgroundColor: '#7c3aed',
+            pointRadius: 4,
+            pointHoverRadius: 6
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            y: {
+              min: 8.35,
+              max: 8.52,
+              grid: { color: '#f1f5f9' },
+              ticks: {
+                callback: val => 'NT$ ' + val.toFixed(2),
+                font: { family: "'Plus Jakarta Sans'", size: 11 },
+                color: '#64748b'
+              }
+            },
+            x: {
+              grid: { display: false },
+              ticks: {
+                font: { family: "'Plus Jakarta Sans', 'Noto Sans TC'", size: 11 },
+                color: '#64748b'
+              }
+            }
+          },
+          plugins: {
+            legend: { display: false },
+            tooltip: {
+              callbacks: {
+                label: context => ` 淨值: NT$ ${context.raw.toFixed(4)}`
+              }
+            }
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>

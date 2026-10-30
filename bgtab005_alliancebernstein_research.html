@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>聯博多元資產收益組合基金-AI類型 (BGTAB005) · 獨立研究專頁 - YU 基金觀察</title>
+  <meta name="theme-color" content="#f8fafc">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="app-container">
+
+    <!-- Header Navigation -->
+    <header class="header-nav">
+      <div class="brand-section">
+        <a href="index.html" class="brand-icon" style="text-decoration: none; background: linear-gradient(135deg, #0284c7 0%, #38bdf8 100%);">
+          <i class="fa-solid fa-arrow-left"></i>
+        </a>
+        <div>
+          <h1 class="brand-title">聯博多元資產收益組合基金 · 獨立研究報告</h1>
+          <div class="brand-subtitle">
+            <span>標的代碼: <strong class="brand-pill">BGTAB005</strong></span>
+            <span>客戶代號: <strong class="brand-pill">YU</strong></span>
+            <span>資產角色: <strong style="color: var(--color-cyan);">30% 全球多元收息標的（月配現金）</strong></span>
+          </div>
+        </div>
+      </div>
+      <div class="header-status">
+        <nav class="nav-links-group">
+          <a href="index.html" class="nav-link-btn"><i class="fa-solid fa-house"></i> 總覽儀表板</a>
+          <a href="tctpl003_tw50_research.html" class="nav-link-btn"><i class="fa-solid fa-arrow-trend-up"></i> 台股50</a>
+          <a href="bgtal009_allianz_research.html" class="nav-link-btn"><i class="fa-solid fa-leaf"></i> 安聯收益</a>
+          <a href="bgtab005_alliancebernstein_research.html" class="nav-link-btn active"><i class="fa-solid fa-shield-halved"></i> 聯博多元</a>
+          <a href="bgtft004_franklin_research.html" class="nav-link-btn"><i class="fa-solid fa-gem"></i> 富蘭克林</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Fund Hero Information Card -->
+    <div class="fund-hero-card">
+      <div class="fund-hero-header">
+        <div class="fund-title-box">
+          <h2>
+            <span>聯博多元資產收益組合基金-AI類型(新台幣)</span>
+            <span class="badge badge-cyan">扣費順位 3</span>
+            <span class="badge badge-gold">配置 30%</span>
+          </h2>
+          <div class="fund-meta-tags">
+            <span class="badge badge-subtle">代號：BGTAB005</span>
+            <span class="badge badge-subtle">經理公司：聯博證券投信</span>
+            <span class="badge badge-subtle">保管機構：兆豐國際商銀</span>
+            <span class="badge badge-subtle">風險等級：RR3</span>
+            <span class="badge badge-subtle">計價幣別：新臺幣 (AI避險)</span>
+            <span class="badge badge-emerald">配息政策：月配現金（匯出至指定帳戶）</span>
+          </div>
+        </div>
+        <div>
+          <a href="index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> 返回總儀表板</a>
+        </div>
+      </div>
+
+      <!-- YU 持倉狀況即時看板 -->
+      <div class="fund-stats-strip">
+        <div class="stat-item">
+          <span class="stat-item-label">持有單位數餘額</span>
+          <span class="stat-item-value">94,221.6641 單位</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-item-label">買入平均成本 (10/27)</span>
+          <span class="stat-item-value">NT$ 6.3700</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-item-label">最新官方淨值 (10/27)</span>
+          <span class="stat-item-value" style="color: var(--color-cyan);">NT$ 6.3700</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-item-label">目前帳戶現值</span>
+          <span class="stat-item-value">NT$ 600,192</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-item-label">預估每月配息金額</span>
+          <span class="stat-item-value text-cyan">約 NT$ 3,600 ~ 4,000</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 雙欄架構：走勢圖 + 子基金配置拆解 -->
+    <div class="dashboard-grid">
+      
+      <!-- 淨值走勢圖 -->
+      <div class="card">
+        <div class="card-header-flex">
+          <div class="card-title">
+            <i class="fa-solid fa-chart-line"></i>
+            <span>單位淨值走勢歷程 (2026/10)</span>
+          </div>
+          <span class="badge badge-cyan">波幅極低 · 抗震穩定</span>
+        </div>
+        <div class="chart-wrapper">
+          <canvas id="abNavChart"></canvas>
+        </div>
+      </div>
+
+      <!-- 核心子基金組合配置 -->
+      <div class="card">
+        <div class="card-header-flex">
+          <div class="card-title">
+            <i class="fa-solid fa-cubes"></i>
+            <span>前五大核心子基金配置 (Fund of Funds)</span>
+          </div>
+          <span class="badge badge-primary">全球動態調配</span>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 14px; margin-top: 8px;">
+          <div>
+            <div style="display: flex; justify-content: space-between; font-size: 13px; font-weight: 700;">
+              <span><i class="fa-solid fa-file-invoice-dollar" style="color: #0284c7;"></i> 聯博全球高收益債券基金</span>
+              <span>24.5%</span>
+            </div>
+            <div class="holdings-progress-bar">
+              <div class="holdings-progress-fill" style="width: 24.5%; background: #0284c7;"></div>
+            </div>
+          </div>
+          <div>
+            <div style="display: flex; justify-content: space-between; font-size: 13px; font-weight: 700;">
+              <span><i class="fa-solid fa-building-columns" style="color: #0369a1;"></i> 聯博美國收益基金</span>
+              <span>18.2%</span>
+            </div>
+            <div class="holdings-progress-bar">
+              <div class="holdings-progress-fill" style="width: 18.2%; background: #0369a1;"></div>
+            </div>
+          </div>
+          <div>
+            <div style="display: flex; justify-content: space-between; font-size: 13px; font-weight: 700;">
+              <span><i class="fa-solid fa-globe" style="color: #0ea5e9;"></i> 聯博全球多元資產收益基金</span>
+              <span>16.8%</span>
+            </div>
+            <div class="holdings-progress-bar">
+              <div class="holdings-progress-fill" style="width: 16.8%; background: #0ea5e9;"></div>
+            </div>
+          </div>
+          <div>
+            <div style="display: flex; justify-content: space-between; font-size: 13px; font-weight: 700;">
+              <span><i class="fa-solid fa-chart-line" style="color: #38bdf8;"></i> 聯博全球優質核心股票基金</span>
+              <span>15.0%</span>
+            </div>
+            <div class="holdings-progress-bar">
+              <div class="holdings-progress-fill" style="width: 15.0%; background: #38bdf8;"></div>
+            </div>
+          </div>
+          <div>
+            <div style="display: flex; justify-content: space-between; font-size: 13px; font-weight: 700;">
+              <span><i class="fa-solid fa-coins" style="color: #7dd3fc;"></i> 聯博新興市場債券基金</span>
+              <span>10.5%</span>
+            </div>
+            <div class="holdings-progress-bar">
+              <div class="holdings-progress-fill" style="width: 10.5%; background: #7dd3fc;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 投資策略與保單定位說明 -->
+    <div class="card" style="margin-bottom: 24px;">
+      <div class="card-title" style="margin-bottom: 14px;">
+        <i class="fa-solid fa-shield-virus"></i>
+        <span>在客戶 YU 保單中的防禦價值與現金收益機制</span>
+      </div>
+      <div style="color: var(--text-secondary); font-size: 14px; line-height: 1.8;">
+        <p><strong>1. 組合型架構（Fund of Funds）雙重分散風險</strong>：本基金並非直接買進單一股票或個別債券，而是由聯博投研團隊精選旗下數十檔頂級子基金，達到資產類別、國家區域與幣別的三重高度分散，降低突發黑天鵝事件的下檔衝擊。</p>
+        <p style="margin-top: 8px;"><strong>2. AI 級別新台幣匯率避險機制</strong>：本級別專為台灣投資人量身設計，透過動態匯率避險技術平滑美金對新台幣的匯率震盪，避免「賺了利息卻賠了匯差」。</p>
+        <p style="margin-top: 8px;"><strong>3. 「配現金」每月定期入帳</strong>：YU 投資 NT$ 600,192 元，擁有 94,221 單位數，預估每月能帶來約 NT$ 3,600~4,000 的現金撥回入帳，扣費順位列為第 3 順位，享有高度防護。</p>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-info">
+      <p>YU · 基金觀察與保單資產管理系統 | 標的代碼：BGTAB005</p>
+      <a href="index.html" class="table-link-btn" style="margin-top: 8px;"><i class="fa-solid fa-house"></i> 回到總儀表板</a>
+    </footer>
+
+  </div>
+
+  <script>
+    // 繪製聯博走勢圖
+    document.addEventListener("DOMContentLoaded", () => {
+      const ctx = document.getElementById("abNavChart").getContext("2d");
+      new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: ['10/01', '10/05', '10/10', '10/15', '10/20', '10/25', '10/27 (買入)'],
+          datasets: [{
+            label: '官方單位淨值 (TWD)',
+            data: [6.34, 6.35, 6.35, 6.36, 6.365, 6.368, 6.3700],
+            borderColor: '#0284c7',
+            backgroundColor: 'rgba(2, 132, 199, 0.08)',
+            borderWidth: 2.5,
+            fill: true,
+            tension: 0.25,
+            pointBackgroundColor: '#0284c7',
+            pointRadius: 4,
+            pointHoverRadius: 6
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            y: {
+              min: 6.30,
+              max: 6.42,
+              grid: { color: '#f1f5f9' },
+              ticks: {
+                callback: val => 'NT$ ' + val.toFixed(2),
+                font: { family: "'Plus Jakarta Sans'", size: 11 },
+                color: '#64748b'
+              }
+            },
+            x: {
+              grid: { display: false },
+              ticks: {
+                font: { family: "'Plus Jakarta Sans', 'Noto Sans TC'", size: 11 },
+                color: '#64748b'
+              }
+            }
+          },
+          plugins: {
+            legend: { display: false },
+            tooltip: {
+              callbacks: {
+                label: context => ` 淨值: NT$ ${context.raw.toFixed(4)}`
+              }
+            }
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>

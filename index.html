@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YU · 基金觀察與保單資產總儀表板</title>
+  <meta name="description" content="客戶 YU 專屬基金理財與保單資產觀察總儀表板，提供即時資產動態估值、4檔持倉配置、現金流收益與壽險身故保障全方位分析。">
+  <meta name="theme-color" content="#f8fafc">
+
+  <!-- Google Fonts: Plus Jakarta Sans & Noto Sans TC -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="app-container">
+    
+    <!-- 1. Header Navigation -->
+    <header class="header-nav">
+      <div class="brand-section">
+        <div class="brand-icon">
+          <i class="fa-solid fa-chart-line"></i>
+        </div>
+        <div>
+          <h1 class="brand-title">YU · 基金觀察與保單資產總儀表板</h1>
+          <div class="brand-subtitle">
+            <span>保單號碼: <strong class="brand-pill">000038776551318</strong></span>
+            <span>計價幣別: <strong class="brand-pill">新臺幣 (TWD)</strong></span>
+            <span>險種: <strong>安達人壽富貴大贏家變額萬能壽險戊型</strong></span>
+          </div>
+        </div>
+      </div>
+      <div class="header-status">
+        <nav class="nav-links-group">
+          <a href="index.html" class="nav-link-btn active"><i class="fa-solid fa-house"></i> 總覽儀表板</a>
+          <a href="tctpl003_tw50_research.html" class="nav-link-btn"><i class="fa-solid fa-arrow-trend-up"></i> 台股50 (TCTPL003)</a>
+          <a href="bgtal009_allianz_research.html" class="nav-link-btn"><i class="fa-solid fa-leaf"></i> 安聯收益 (BGTAL009)</a>
+          <a href="bgtab005_alliancebernstein_research.html" class="nav-link-btn"><i class="fa-solid fa-shield-halved"></i> 聯博多元 (BGTAB005)</a>
+          <a href="bgtft004_franklin_research.html" class="nav-link-btn"><i class="fa-solid fa-gem"></i> 富蘭克林 (BGTFT004)</a>
+        </nav>
+        <div class="status-badge">
+          <span class="status-dot"></span>
+          <span>正常繳清 · 契約有效</span>
+        </div>
+        <span class="update-tag" id="lastUpdatedText">評價基準日: 2026/10/30</span>
+      </div>
+    </header>
+
+    <!-- 2. Policy Strategy Banner -->
+    <section class="policy-banner">
+      <div class="banner-item">
+        <i class="fa-solid fa-money-bill-wave"></i>
+        <div>
+          <div class="banner-label">收益分配約定（每月現金流）</div>
+          <div class="banner-value">
+            三大核心多重資產基金全數約定 <strong class="banner-highlight">「配現金」</strong>，每月收益直接匯入指定銀行帳戶，本金持續穩健收息。
+          </div>
+        </div>
+      </div>
+      <div class="banner-item">
+        <i class="fa-solid fa-layer-group"></i>
+        <div>
+          <div class="banner-label">保費投資配置與扣費順位</div>
+          <div class="banner-value">
+            <strong class="banner-highlight">順位 1 台股50 (10%)</strong> ➔ 順位 2 安聯 (30%) ➔ 順位 3 聯博 (30%) ➔ 順位 4 富蘭克林 (30%)，優先保護高息本金。
+          </div>
+        </div>
+      </div>
+      <div class="banner-item">
+        <i class="fa-solid fa-user-shield"></i>
+        <div>
+          <div class="banner-label">人壽身故保障與財務槓桿</div>
+          <div class="banner-value">
+            基本保額 <strong class="banner-highlight">NT$ 2,800,000</strong>，享有高達 140% 保障倍數；目前保單借款 NT$ 0（借款利率 4.3%）。
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Key Metrics Summary Grid -->
+    <section class="metrics-grid">
+      <!-- Metric 1: Account Valuation -->
+      <div class="metric-card gold">
+        <div class="metric-header">
+          <span class="metric-label">目前保單帳戶總價值</span>
+          <div class="metric-icon"><i class="fa-solid fa-vault"></i></div>
+        </div>
+        <div class="metric-value" id="totalValuation">NT$ 2,003,461</div>
+        <div class="metric-sub" id="totalCost">
+          原始躉繳: NT$ 2,000,000 (帳面增值 +NT$ 3,461)
+        </div>
+      </div>
+
+      <!-- Metric 2: Unrealized Gain -->
+      <div class="metric-card emerald">
+        <div class="metric-header">
+          <span class="metric-label">投資部位未實現損益</span>
+          <div class="metric-icon"><i class="fa-solid fa-chart-line"></i></div>
+        </div>
+        <div class="metric-value text-emerald" id="unrealizedGain">+NT$ 3,820 (+0.19%)</div>
+        <div class="metric-sub text-emerald" id="gainDesc">
+          淨投資: NT$ 1,999,641 · 台股領漲 +1.92%
+        </div>
+      </div>
+
+      <!-- Metric 3: Estimated Monthly Dividend -->
+      <div class="metric-card cyan">
+        <div class="metric-header">
+          <span class="metric-label">預估每月配息現金流</span>
+          <div class="metric-icon"><i class="fa-solid fa-hand-holding-dollar"></i></div>
+        </div>
+        <div class="metric-value text-cyan" id="estimatedDividend">約 NT$ 10,500 ~ 12,000</div>
+        <div class="metric-sub" id="dividendDesc">
+          依 3 檔配息基金 180 萬部位 (年化約 7~8%) 預估
+        </div>
+      </div>
+
+      <!-- Metric 4: Death Benefit -->
+      <div class="metric-card purple">
+        <div class="metric-header">
+          <span class="metric-label">人壽身故保障額度</span>
+          <div class="metric-icon"><i class="fa-solid fa-shield-heart"></i></div>
+        </div>
+        <div class="metric-value text-purple" id="deathBenefit">NT$ 2,800,000</div>
+        <div class="metric-sub">
+          保障槓桿比率 140% · 借款 NT$ 0 (0%)
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Charts Section -->
+    <section class="dashboard-grid">
+      <!-- Chart 1: Allocation Doughnut -->
+      <div class="card">
+        <div class="card-header-flex">
+          <div class="card-title">
+            <i class="fa-solid fa-chart-pie"></i>
+            <span>資產配置攻守藍圖 (攻 10% ＋ 守 90%)</span>
+          </div>
+          <span class="badge badge-emerald">4 檔多元核心配置</span>
+        </div>
+        <div class="chart-wrapper">
+          <canvas id="allocationChart"></canvas>
+        </div>
+      </div>
+
+      <!-- Chart 2: Performance Bar -->
+      <div class="card">
+        <div class="card-header-flex">
+          <div class="card-title">
+            <i class="fa-solid fa-chart-simple"></i>
+            <span>各標的申購成本 vs 目前帳戶現值</span>
+          </div>
+          <span class="badge badge-primary">台股50精選增值中</span>
+        </div>
+        <div class="chart-wrapper">
+          <canvas id="performanceChart"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Holdings Section -->
+    <section class="table-section">
+      <div class="card">
+        <div class="card-header-flex">
+          <div class="card-title">
+            <i class="fa-solid fa-list-check"></i>
+            <span>投資標的持倉與績效總表 (Holdings Portfolio)</span>
+          </div>
+          <span class="badge badge-primary">共 4 檔核心標的</span>
+        </div>
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>扣費順位</th>
+                <th>標的代碼</th>
+                <th>基金標的名稱與配置型態</th>
+                <th>約定配置%</th>
+                <th>持有單位數</th>
+                <th>買入單位成本</th>
+                <th>最新評價淨值</th>
+                <th>目前帳戶現值</th>
+                <th>未實現損益</th>
+                <th>操作</th>
+              </tr>
+            </thead>
+            <tbody id="holdingsTableBody">
+              <!-- Dynamically Populated by app.js -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Transactions Section -->
+    <section class="table-section">
+      <div class="card">
+        <div class="card-header-flex">
+          <div class="card-title">
+            <i class="fa-solid fa-receipt"></i>
+            <span>保單交易與投資帳務流水 (Transactions)</span>
+          </div>
+          <span class="badge badge-gold" id="transactionsCount">共 5 筆明細</span>
+        </div>
+        
+        <!-- Filter Buttons -->
+        <div class="filter-bar">
+          <button class="filter-btn active" onclick="filterTransactions('all', this)">全部明細 (5)</button>
+          <button class="filter-btn" onclick="filterTransactions('buy', this)">標的申購 (4)</button>
+          <button class="filter-btn" onclick="filterTransactions('premium', this)">保費躉繳 (1)</button>
+        </div>
+
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>交易序號</th>
+                <th>交易日期</th>
+                <th>交易類別</th>
+                <th>標的名稱與代碼</th>
+                <th>交易金額</th>
+                <th>交易單位數</th>
+                <th>成交價格</th>
+                <th>手續費</th>
+                <th>交易狀態</th>
+              </tr>
+            </thead>
+            <tbody id="transactionsTableBody">
+              <!-- Dynamically Populated by app.js -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Footer -->
+    <footer class="footer-info">
+      <p>YU · 基金觀察與保單資產管理系統 | 服務通路：永達保經北十 | 業務員：王執定</p>
+      <p style="color: var(--text-light); margin-top: 4px;">資料來源：安達人壽官方保單帳戶明細與各基金最新公告真實淨值 | 所有數值均經 100% 數學對齊驗證</p>
+    </footer>
+
+  </div>
+
+  <!-- Application Logic -->
+  <script src="app.js"></script>
+</body>
+</html>

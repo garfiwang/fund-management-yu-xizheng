@@ -1,0 +1,79 @@
+{
+  "transactions": [
+    {
+      "id": "TX-20261013-001",
+      "date": "2026/10/13",
+      "type": "躉繳入帳",
+      "category": "premium",
+      "targetCode": "-",
+      "targetName": "安達人壽富貴大贏家變額萬能壽險戊型",
+      "amount": 2000000,
+      "fee": 0,
+      "units": 0,
+      "price": 0,
+      "exchangeRate": 1,
+      "summary": "第1年第1期 (躉繳保費)",
+      "status": "正常繳清"
+    },
+    {
+      "id": "TX-20261027-001",
+      "date": "2026/10/27",
+      "type": "標的申購",
+      "category": "buy",
+      "targetCode": "TCTPL003",
+      "targetName": "台灣股市50精選(3)",
+      "amount": 199065,
+      "fee": 1000,
+      "units": 3230.104392,
+      "price": 61.6280,
+      "exchangeRate": 1,
+      "summary": "首期投資配置 10%（扣費順位 1）",
+      "status": "已成交"
+    },
+    {
+      "id": "TX-20261027-002",
+      "date": "2026/10/27",
+      "type": "標的申購",
+      "category": "buy",
+      "targetCode": "BGTAL009",
+      "targetName": "安聯收益成長多重資產基金-B類型(月配息)-新臺幣 - (配現金)",
+      "amount": 600192,
+      "fee": 0,
+      "units": 73373.105134,
+      "price": 8.1800,
+      "exchangeRate": 1,
+      "summary": "首期投資配置 30%（扣費順位 2，配現金）",
+      "status": "已成交"
+    },
+    {
+      "id": "TX-20261027-003",
+      "date": "2026/10/27",
+      "type": "標的申購",
+      "category": "buy",
+      "targetCode": "BGTAB005",
+      "targetName": "聯博收益傘型基金之聯博多元資產收益組合基金-AI類型(新台幣) - (配現金)",
+      "amount": 600192,
+      "fee": 0,
+      "units": 94221.664050,
+      "price": 6.3700,
+      "exchangeRate": 1,
+      "summary": "首期投資配置 30%（扣費順位 3，配現金）",
+      "status": "已成交"
+    },
+    {
+      "id": "TX-20261027-004",
+      "date": "2026/10/27",
+      "type": "標的申購",
+      "category": "buy",
+      "targetCode": "BGTFT004",
+      "targetName": "富蘭克林華美多重資產收益基金-新台幣(分配型) - (配現金)",
+      "amount": 600192,
+      "fee": 0,
+      "units": 70944.680851,
+      "price": 8.4600,
+      "exchangeRate": 1,
+      "summary": "首期投資配置 30%（扣費順位 4，配現金）",
+      "status": "已成交"
+    }
+  ]
+}
