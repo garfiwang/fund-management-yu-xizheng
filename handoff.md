@@ -26,12 +26,15 @@
 ## ➡️ 下一步
 1. 追蹤 11 月份首期月配息入帳情況（預估每月約 NT$ 10,500 ~ 12,000），並將配息交易記錄寫入 `data/transactions.json`。
 2. 同步追蹤各檔標的最新公告淨值（台股50精選已率先漲至 62.8107）。
-3. 依使用者需求建立 GitHub Pages 線上發布或 Obsidian 筆記同步。
+3. GitHub Pages 線上發布已完成：[https://garfiwang.github.io/fund-management-yu-xizheng/](https://garfiwang.github.io/fund-management-yu-xizheng/)。
 
 ## ⚠️ 注意事項
 - 遵循數據計算與權威驗證鐵律：嚴禁靜態估算，所有計算必須基於官方真實數據。
 - 3 檔配息基金均為「配現金」，與舊案 Lee（配息再投入）之架構完全不同，切勿混淆。
 
 ## 🕐 最後更新
-- 時間：2026-10-30 10:54
+- 時間：2026-10-30 11:03
 - 更新者：Antigravity @ Mac
+- Git push：✅ 已推送到 GitHub [garfiwang/fund-management-yu-xizheng](https://github.com/garfiwang/fund-management-yu-xizheng)（公開倉庫）
+- Pages：✅ 已啟用（[https://garfiwang.github.io/fund-management-yu-xizheng/](https://garfiwang.github.io/fund-management-yu-xizheng/)）
+

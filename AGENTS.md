@@ -57,6 +57,15 @@
     └── transactions.json                         # 交易流水明細（5 筆真實紀錄）
 ```
 
+## 同步層級（本專案初始化至第 2 層級）
+
+| 層級 | 平台 | 位置 | 讀取時機 |
+|------|------|------|---------|
+| L1 | 本地（GDrive） | `AGENTS.md`＋`handoff.md` | 每個 session |
+| L2 | GitHub | [garfiwang/fund-management-yu-xizheng](https://github.com/garfiwang/fund-management-yu-xizheng)（[線上發布 Pages](https://garfiwang.github.io/fund-management-yu-xizheng/)） | 指定時 |
+| L3 | Obsidian | `/Users/garfiwang/Documents/Obsidian/[Project] 基金管理-于席正/專案工作流程.md` | 有需要時 |
+
+
 ## 工作約定與數據驗證鐵律
 - 任何 Agent、任何電腦：**開工先讀 `handoff.md`，收工必更新 `handoff.md`**
 - **數據計算與權威驗證鐵律（強制遵守）**：
