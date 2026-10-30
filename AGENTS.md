@@ -25,7 +25,9 @@
 - [x] 階段三：建置結構化真實資料庫（`data/accounts.json`、`data/fund_details.json`、`data/transactions.json`）
 - [x] 階段四：開發 YU 專屬基金觀察總儀表板（`index.html`、`styles.css`、`app.js`）
 - [x] 階段五：完成 4 檔基金獨立專屬深度研究子分頁（`tctpl003_tw50_research.html`、`bgtal009_allianz_research.html`、`bgtab005_alliancebernstein_research.html`、`bgtft004_franklin_research.html`）
-- [ ] 階段六：持續追蹤 11 月份首期月配息入帳明細與最新淨值動態
+- [x] 階段六：發布至 GitHub Pages 線上公開網頁（https://garfiwang.github.io/fund-management-yu-xizheng/）
+- [ ] 階段七：【重要待辦】加入保單扣繳費用金額（依扣費順位 1 台股50優先扣繳並記錄單位數異動）
+- [ ] 階段八：持續追蹤 11 月份首期月配息入帳明細與最新淨值動態
 
 ## 資料夾結構
 ```
@@ -57,7 +59,7 @@
     └── transactions.json                         # 交易流水明細（5 筆真實紀錄）
 ```
 
-## 同步層級（本專案初始化至第 2 層級）
+## 同步層級（本專案初始化至第 3 層級）
 
 | 層級 | 平台 | 位置 | 讀取時機 |
 |------|------|------|---------|
