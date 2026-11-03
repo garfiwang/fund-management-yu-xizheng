@@ -43,8 +43,8 @@
 - 配息方式為「配現金」（匯出指定帳戶），與舊案 Lee（自動再投入滾入單位數）不同，帳戶總價值主要由淨值波動與費用扣除決定。
 
 ## 🕐 最後更新
-- 時間：2026-11-03 09:56
+- 時間：2026-11-03 13:56
 - 更新者：Antigravity @ Mac
 - 項目：建立 YU 專屬基金經理人作戰室與全天候量化風控作戰手冊 (1978 迄今實戰體系)
-- Git push：✅ 準備推送至 GitHub [garfiwang/fund-management-yu-xizheng](https://github.com/garfiwang/fund-management-yu-xizheng)
+- Git push：✅ 已推送到 GitHub [garfiwang/fund-management-yu-xizheng](https://github.com/garfiwang/fund-management-yu-xizheng)
 - Pages：✅ 已啟用（[https://garfiwang.github.io/fund-management-yu-xizheng/](https://garfiwang.github.io/fund-management-yu-xizheng/)）
