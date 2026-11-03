@@ -49,6 +49,95 @@
       { "priority": 4, "code": "BGTFT004", "name": "富蘭克林華美多重資產收益基金-新台幣(分配型)", "ratio": "30%" }
     ]
   },
+  "managerRisk": {
+    "managerTitle": "YU 專屬基金經理人",
+    "experienceSince": 1978,
+    "coreCreed": "行情不可預測，但應變必須預先鎖死。事前把所有可能情境的觸發點、數字、門檻與轉換標的全部編制成作戰手冊。",
+    "currentSignal": "GREEN",
+    "currentSignalName": "常態巡航模式",
+    "currentSignalDesc": "目前各項宏觀與微觀指標均處於健康安全區間，無系統性風險警報。",
+    "moatWaterLevel": {
+      "priority1Asset": "台灣股市50精選(3)",
+      "currentValue": 202885,
+      "healthScore": 100,
+      "estimatedMonthlyFee": 200,
+      "estimatedSurvivalMonths": 1014,
+      "status": "充足安全",
+      "warningThreshold": 50000
+    },
+    "defenseLevels": [
+      {
+        "level": "GREEN",
+        "name": "常態巡航模式 (Normal Cruising)",
+        "color": "#059669",
+        "navThreshold": 1980000,
+        "navThresholdDesc": "帳戶總值 ≥ NT$ 1,980,000",
+        "tw50Threshold": 59.67,
+        "tw50ThresholdDesc": "台股50回撤 < 5%",
+        "vixThreshold": "< 20",
+        "currentStatus": "生效中 (現值 NT$ 2,003,461)",
+        "bufferAmount": 23461,
+        "bufferPercent": 1.18,
+        "action": "維持 10% 成長 + 90% 多重資產，每月穩定領取 NT$ 10,500 ~ 12,000 現金流，台股50支應行政扣費。"
+      },
+      {
+        "level": "YELLOW",
+        "name": "一級警戒 / 戰術減震 (Tactical Cushion)",
+        "color": "#d97706",
+        "navThreshold": 1940000,
+        "navThresholdDesc": "帳戶總值跌破 NT$ 1,940,000 (-3.0%)",
+        "tw50Threshold": 56.52,
+        "tw50ThresholdDesc": "台股50跌破 56.52 (-10%)",
+        "vixThreshold": "≥ 25",
+        "currentStatus": "安全緩衝充裕",
+        "bufferAmount": 63461,
+        "bufferPercent": 3.17,
+        "action": "啟動高頻監控，評估獲利了結台股50之 50% 部位轉入保單內貨幣市場基金，充實扣費水庫。"
+      },
+      {
+        "level": "ORANGE",
+        "name": "二級防禦 / 減震鎖本 (Capital Shielding)",
+        "color": "#ea580c",
+        "navThreshold": 1880000,
+        "navThresholdDesc": "帳戶總值跌破 NT$ 1,880,000 (-6.0%)",
+        "tw50Threshold": 53.38,
+        "tw50ThresholdDesc": "台股50跌破 53.38 (-15%)",
+        "vixThreshold": "≥ 32",
+        "currentStatus": "安全緩衝充裕",
+        "bufferAmount": 123461,
+        "bufferPercent": 6.16,
+        "action": "台股50精選部位 100% 轉換為保單內新台幣貨幣市場基金，完全規避股票下行風險，保全扣費資金池。"
+      },
+      {
+        "level": "RED",
+        "name": "三級極限 / 防空洞模式 (Maximum Bunkering)",
+        "color": "#dc2626",
+        "navThreshold": 1800000,
+        "navThresholdDesc": "帳戶總值跌破 NT$ 1,800,000 (-10.0%)",
+        "tw50Threshold": 50.00,
+        "tw50ThresholdDesc": "系統性重挫",
+        "vixThreshold": "≥ 40",
+        "currentStatus": "終極防線，安全緩衝充足",
+        "bufferAmount": 203461,
+        "bufferPercent": 10.16,
+        "action": "全面進防空洞！行使免費標的轉換權將高波動資產轉入保單內超短公債/貨幣標的，鎖死本金，誓死捍衛 NT$ 280 萬身故保額！"
+      },
+      {
+        "level": "BLUE",
+        "name": "四級再平衡 / 貪婪重啟 (Tactical Re-Entry)",
+        "color": "#2563eb",
+        "navThreshold": 0,
+        "navThresholdDesc": "VIX 自 40+ 回落至 22 以下連 10 日",
+        "tw50Threshold": 0,
+        "tw50ThresholdDesc": "歷史估值底部訊號確立",
+        "vixThreshold": "< 22",
+        "currentStatus": "待命機制",
+        "bufferAmount": 0,
+        "bufferPercent": 0,
+        "action": "採階梯式三次三等份 (30%-30%-40%) 有序回補多重資產與台股50，鎖定歷史低點帶來的超高配息殖利率。"
+      }
+    ]
+  },
   "holdings": [
     {
       "code": "TCTPL003",

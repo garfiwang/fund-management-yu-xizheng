@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YU 專屬基金經理人 · 極端情境量化作戰室 (Manager's Risk War Room)</title>
+  <meta name="description" content="客戶 YU 專屬基金經理人作戰室。歷經 1978 年迄今多次景氣循環，預先鎖死所有極端情境觸發點、數字、門檻與轉換標的，全面捍衛本金安全、現金配息與身故保障。">
+  <meta name="theme-color" content="#f8fafc">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="app-container">
+
+    <!-- 1. Header Navigation -->
+    <header class="header-nav">
+      <div class="brand-section">
+        <a href="index.html" class="brand-icon" style="text-decoration: none;" title="返回總覽儀表板">
+          <i class="fa-solid fa-arrow-left"></i>
+        </a>
+        <div>
+          <h1 class="brand-title">YU 專屬基金經理人 · 極端情境作戰室</h1>
+          <div class="brand-subtitle">
+            <span>操盤資歷: <strong class="brand-pill">1978 年迄今 (48 年)</strong></span>
+            <span>客戶代號: <strong class="brand-pill">YU</strong></span>
+            <span>保單號碼: <strong class="brand-pill">000038776551318</strong></span>
+            <span>客戶屬性: <strong style="color: #dc2626;">極度厭惡風險 (Capital Preservation)</strong></span>
+          </div>
+        </div>
+      </div>
+      <div class="header-status">
+        <nav class="nav-links-group">
+          <a href="index.html" class="nav-link-btn"><i class="fa-solid fa-house"></i> 總覽儀表板</a>
+          <a href="manager_war_room.html" class="nav-link-btn active"><i class="fa-solid fa-shield-halved"></i> 經理人作戰室</a>
+          <a href="tctpl003_tw50_research.html" class="nav-link-btn"><i class="fa-solid fa-arrow-trend-up"></i> 台股50</a>
+          <a href="bgtal009_allianz_research.html" class="nav-link-btn"><i class="fa-solid fa-leaf"></i> 安聯收益</a>
+          <a href="bgtab005_alliancebernstein_research.html" class="nav-link-btn"><i class="fa-solid fa-shield-halved"></i> 聯博多元</a>
+          <a href="bgtft004_franklin_research.html" class="nav-link-btn"><i class="fa-solid fa-gem"></i> 富蘭克林</a>
+        </nav>
+        <div class="status-badge">
+          <span class="status-dot"></span>
+          <span>綠燈巡航 · 安全無虞</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- 2. Manager Creed Hero Box -->
+    <section class="warroom-hero-box">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 16px;">
+        <div style="display: flex; align-items: center; gap: 16px;">
+          <div class="radar-avatar" style="width: 56px; height: 56px; font-size: 26px;">
+            <i class="fa-solid fa-user-shield"></i>
+          </div>
+          <div>
+            <h2 style="font-size: 20px; font-weight: 800; color: var(--text-primary);">
+              YU 專屬基金經理人 · 全天候量化風控作戰總部
+            </h2>
+            <div style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">
+              安達人壽富貴大贏家變額萬能壽險戊型 | 契約始期: 2026/10/01 | 身故保障: NT$ 2,800,000
+            </div>
+          </div>
+        </div>
+        <div class="radar-signal-pill" style="font-size: 14px; padding: 8px 18px;">
+          <span class="radar-pulse-dot"></span>
+          <span>當前狀態：🟢 綠燈 · 常態巡航模式</span>
+        </div>
+      </div>
+
+      <div class="warroom-creed-quote">
+        <i class="fa-solid fa-quote-left" style="color: var(--color-primary); margin-right: 8px;"></i>
+        <strong>經理人核心信條：</strong>「作為自 1978 年歷經多次景氣循環、高通膨與金融危機的基金經理人，我的操盤核心信條始終是：<strong>行情不可預測，但應變必須預先鎖死</strong>。對於極度厭惡風險的客戶 YU，我們絕不能等市場暴跌才來救火，而必須在事前把所有可能情境的觸發點、數字、門檻與轉換標的全部編制成作戰手冊。」
+      </div>
+
+      <!-- 4 Quick Stats -->
+      <div class="warroom-kpi-grid">
+        <div class="radar-stat-box" style="background: var(--bg-subtle); border-color: var(--border-color);">
+          <span class="radar-stat-label" style="color: var(--text-muted);"><i class="fa-solid fa-vault"></i> 目前保單帳戶總價值</span>
+          <span class="radar-stat-val" id="warroomTotalValuation" style="color: var(--text-primary);">NT$ 2,003,461</span>
+          <span class="radar-stat-sub">原始躉繳本金 NT$ 2,000,000 (淨值增值 +NT$ 3,461)</span>
+        </div>
+        <div class="radar-stat-box" style="background: var(--bg-subtle); border-color: var(--border-color);">
+          <span class="radar-stat-label" style="color: #b45309;"><i class="fa-solid fa-flag-checkered"></i> 距首道黃燈防線緩衝</span>
+          <span class="radar-stat-val" id="warroomYellowBuffer" style="color: #b45309;">+NT$ 63,461 (+3.17%)</span>
+          <span class="radar-stat-sub">黃燈門檻 NT$ 1,940,000 (-3.0%)</span>
+        </div>
+        <div class="radar-stat-box" style="background: var(--bg-subtle); border-color: var(--border-color);">
+          <span class="radar-stat-label" style="color: #b91c1c;"><i class="fa-solid fa-shield-cat"></i> 距終極紅燈防線緩衝</span>
+          <span class="radar-stat-val" id="warroomRedBuffer" style="color: #b91c1c;">+NT$ 203,461 (+10.16%)</span>
+          <span class="radar-stat-sub">鋼鐵止損門檻 NT$ 1,800,000 (-10.0%)</span>
+        </div>
+        <div class="radar-stat-box" style="background: var(--bg-subtle); border-color: var(--border-color);">
+          <span class="radar-stat-label" style="color: var(--color-emerald);"><i class="fa-solid fa-cubes-stacked"></i> 順位 1 台股50扣費水庫</span>
+          <span class="radar-stat-val" id="warroomMoatVal" style="color: var(--color-emerald);">NT$ 202,885</span>
+          <span class="radar-stat-sub" id="warroomMoatUnits">3,230.1044 單位 · 支應約 1,014 個月</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. The 5-Level Risk Defense Matrix -->
+    <section class="card" style="margin-bottom: 24px;">
+      <div class="card-header-flex">
+        <div class="card-title">
+          <i class="fa-solid fa-traffic-light"></i>
+          <span>全天候「五級警戒信號燈」量化防禦矩陣 (The 5-Level Risk Defense Matrix)</span>
+        </div>
+        <span class="badge badge-emerald">硬性量化觸發 · 嚴禁主觀臆測</span>
+      </div>
+      <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 16px;">
+        歷經 1978 年迄今五次全球世紀股災淬鍊，以下各燈號均訂有具體數學觸發線與安達保單標的轉換（Switching）處方。當市場觸發任何門檻，系統自動進入對應作戰序列：
+      </p>
+
+      <div class="defense-matrix-container">
+
+        <!-- 1. Green Signal -->
+        <div class="signal-defense-card active-signal">
+          <div class="signal-card-header">
+            <div class="signal-card-title">
+              <i class="fa-solid fa-circle-check" style="color: #059669; font-size: 20px;"></i>
+              <span>🟢 綠燈：常態巡航模式 (Normal Cruising Protocol)</span>
+            </div>
+            <span class="signal-pill-tag pill-green"><i class="fa-solid fa-check"></i> 當前生效中 · 安全指標全面達標</span>
+          </div>
+          <div class="signal-specs-grid">
+            <div>
+              <div class="spec-item-label">總市值硬性觸發門檻</div>
+              <div class="spec-item-value">≥ NT$ 1,980,000 (回撤 &lt; 1%)</div>
+            </div>
+            <div>
+              <div class="spec-item-label">台股50精選觸發門檻</div>
+              <div class="spec-item-value">回撤 &lt; 5% (淨值 &gt; 59.67)</div>
+            </div>
+            <div>
+              <div class="spec-item-label">CBOE VIX 恐慌指標</div>
+              <div class="spec-item-value">&lt; 20 (市場流動性健康)</div>
+            </div>
+            <div>
+              <div class="spec-item-label">目前實際數值 / 緩衝</div>
+              <div class="spec-item-value text-emerald">NT$ 2,003,461 (+NT$ 23,461)</div>
+            </div>
+          </div>
+          <div class="signal-action-box">
+            <div class="signal-action-title"><i class="fa-solid fa-gears"></i> 經理人操盤作戰指令：</div>
+            1. 維持經典攻守配置：10% 台灣股市50精選 + 90% 跨國三大旗艦多重資產。<br>
+            2. 三大月配高息標的全數約定「配現金」，每月領回約 <strong>NT$ 10,500 ~ 12,000</strong> 現金被動收入直接匯入客戶銀行帳戶。<br>
+            3. 保單行政管理費按約定由順位 1（台股50精選）扣減單位數，保護順位 2~4 高息標的單位數 100% 完整無損。
+          </div>
+        </div>
+
+        <!-- 2. Yellow Signal -->
+        <div class="signal-defense-card yellow-signal">
+          <div class="signal-card-header">
+            <div class="signal-card-title">
+              <i class="fa-solid fa-triangle-exclamation" style="color: #d97706; font-size: 20px;"></i>
+              <span>🟡 黃燈：一級警戒 / 戰術減震模式 (Tactical Cushioning)</span>
+            </div>
+            <span class="signal-pill-tag pill-yellow"><i class="fa-solid fa-clock"></i> 待命中 · 尚有 +NT$ 63,461 緩衝區 (+3.17%)</span>
+          </div>
+          <div class="signal-specs-grid">
+            <div>
+              <div class="spec-item-label">總市值硬性觸發門檻</div>
+              <div class="spec-item-value" style="color: #d97706;">跌破 NT$ 1,940,000 (-3.0%)</div>
+            </div>
+            <div>
+              <div class="spec-item-label">台股50精選觸發門檻</div>
+              <div class="spec-item-value">跌破 56.52 (-10.0%)</div>
+            </div>
+            <div>
+              <div class="spec-item-label">CBOE VIX 恐慌指標</div>
+              <div class="spec-item-value">突破 25 連續 3 個交易日</div>
+            </div>
+            <div>
+              <div class="spec-item-label">轉換避險標的</div>
+              <div class="spec-item-value">保單內新台幣貨幣市場基金</div>
+            </div>
+          </div>
+          <div class="signal-action-box">
+            <div class="signal-action-title"><i class="fa-solid fa-gears"></i> 經理人操盤作戰指令：</div>
+            1. 啟動高頻防禦監控：經理人發布每週 2 次風控快報，主動查核各標的未實現跌幅。<br>
+            2. 戰術獲利了結 / 減震轉換：評估將台股50部位之 50%（約 NT$ 100,000）轉換至安達保單內「新台幣貨幣市場基金」，鎖定現金池以備後續扣費。<br>
+            3. 檢視三大配息基金官方公告之「配息組成項目」，確認本金侵蝕比率是否異常升高（警戒線 &gt; 60%）。
+          </div>
+        </div>
+
+        <!-- 3. Orange Signal -->
+        <div class="signal-defense-card orange-signal">
+          <div class="signal-card-header">
+            <div class="signal-card-title">
+              <i class="fa-solid fa-shield-virus" style="color: #ea580c; font-size: 20px;"></i>
+              <span>🟠 橘燈：二級防禦 / 減震鎖本模式 (Capital Shielding)</span>
+            </div>
+            <span class="signal-pill-tag pill-orange"><i class="fa-solid fa-shield"></i> 待命中 · 尚有 +NT$ 123,461 緩衝區 (+6.16%)</span>
+          </div>
+          <div class="signal-specs-grid">
+            <div>
+              <div class="spec-item-label">總市值硬性觸發門檻</div>
+              <div class="spec-item-value" style="color: #ea580c;">跌破 NT$ 1,880,000 (-6.0%)</div>
+            </div>
+            <div>
+              <div class="spec-item-label">台股50精選觸發門檻</div>
+              <div class="spec-item-value">跌破 53.38 (-15.0%)</div>
+            </div>
+            <div>
+              <div class="spec-item-label">美高收益債信用利差</div>
+              <div class="spec-item-value">HY OAS &gt; 550 bps</div>
+            </div>
+            <div>
+              <div class="spec-item-label">轉換避險標的</div>
+              <div class="spec-item-value">全數轉入短期公債 / 貨幣停泊標的</div>
+            </div>
+          </div>
+          <div class="signal-action-box">
+            <div class="signal-action-title"><i class="fa-solid fa-gears"></i> 經理人操盤作戰指令：</div>
+            1. <strong>股票部位歸零轉換</strong>：台股50精選剩餘部位 100% 轉換為保單內新台幣貨幣市場基金，徹底切斷股票系統性回撤風險，扣費池完全現金化。<br>
+            2. 多重資產部位維持配息運作，發送《經理人橘燈防禦戰報》安撫客戶心理，強調每月現金流仍正常入帳，切勿因恐慌贖回保單。<br>
+            3. 檢核保單各項行政費用扣繳紀錄，確保扣費順位正確運作。
+          </div>
+        </div>
+
+        <!-- 4. Red Signal -->
+        <div class="signal-defense-card red-signal">
+          <div class="signal-card-header">
+            <div class="signal-card-title">
+              <i class="fa-solid fa-radiation" style="color: #dc2626; font-size: 20px;"></i>
+              <span>🔴 紅燈：三級極限 / 防空洞模式 (Maximum Bunkering Protocol)</span>
+            </div>
+            <span class="signal-pill-tag pill-red"><i class="fa-solid fa-skull-crossbones"></i> 終極鋼鐵防線 · 距觸發尚有 +NT$ 203,461 (+10.16%)</span>
+          </div>
+          <div class="signal-specs-grid">
+            <div>
+              <div class="spec-item-label">總市值終極鋼鐵底線</div>
+              <div class="spec-item-value" style="color: #dc2626;">跌破 NT$ 1,800,000 (-10.0%)</div>
+            </div>
+            <div>
+              <div class="spec-item-label">CBOE VIX 恐慌指標</div>
+              <div class="spec-item-value">飆破 40 (恐慌崩盤 / 流動性擠兌)</div>
+            </div>
+            <div>
+              <div class="spec-item-label">身故保障絕對維持線</div>
+              <div class="spec-item-value text-purple">NT$ 2,800,000 絕對安全</div>
+            </div>
+            <div>
+              <div class="spec-item-label">轉換避險標的</div>
+              <div class="spec-item-value">保單內超短天期主權債 / 貨幣基金</div>
+            </div>
+          </div>
+          <div class="signal-action-box">
+            <div class="signal-action-title"><i class="fa-solid fa-gears"></i> 經理人操盤作戰指令：</div>
+            1. <strong>全面進防空洞！鎖死本金！</strong>立即行使保單每年免費轉換權利，將高波動資產全面撤入保單內「貨幣市場基金」或「短期政府公債基金」，將本金殘值鎖死在 180 萬元安全防線。<br>
+            2. <strong>絕對捍衛 NT$ 2,800,000 身故保額</strong>：即便市場跌幅超過 30%，保單內充足的現金價值能保證身故槓桿 100% 有效。<br>
+            3. 經理人與客戶 1 對 1 通話說明防護現況，展示 1978、2008、2020 危機修復軌跡，避免盲目賤賣資產。
+          </div>
+        </div>
+
+        <!-- 5. Blue Signal -->
+        <div class="signal-defense-card blue-signal">
+          <div class="signal-card-header">
+            <div class="signal-card-title">
+              <i class="fa-solid fa-bolt" style="color: #2563eb; font-size: 20px;"></i>
+              <span>🔵 藍燈：四級再平衡 / 貪婪重啟模式 (Tactical Re-Entry Protocol)</span>
+            </div>
+            <span class="signal-pill-tag pill-blue"><i class="fa-solid fa-arrow-rotate-right"></i> 危機落底重啟機制</span>
+          </div>
+          <div class="signal-specs-grid">
+            <div>
+              <div class="spec-item-label">恐慌指標修復確認</div>
+              <div class="spec-item-value">VIX 自 40+ 回落 &lt; 22 連 10 日</div>
+            </div>
+            <div>
+              <div class="spec-item-label">信用利差正常化</div>
+              <div class="spec-item-value">HY OAS 收窄跌破 450 bps</div>
+            </div>
+            <div>
+              <div class="spec-item-label">回補執行方式</div>
+              <div class="spec-item-value">分三梯次 (30% - 30% - 40%)</div>
+            </div>
+            <div>
+              <div class="spec-item-label">目標重啟配息收益</div>
+              <div class="spec-item-value text-emerald">年化 9% ~ 10%+ 高息</div>
+            </div>
+          </div>
+          <div class="signal-action-box">
+            <div class="signal-action-title"><i class="fa-solid fa-gears"></i> 經理人操盤作戰指令：</div>
+            1. <strong>分批有序重啟</strong>：嚴禁單筆梭哈！採取「30% - 30% - 40%」分批自貨幣避風港移回核心多重資產。<br>
+            2. 第一批（30%）：轉回安聯、聯博、富蘭克林，鎖定歷史低點所帶來的極高配息殖利率。<br>
+            3. 第二批（30%）：確認總體經濟領先指標回升後投入。<br>
+            4. 第三批（40%）：重啟 10% 台股50精選積極部位，恢復完整的 10% 成長 + 90% 高息攻守陣型。
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 4. Fee Deduction Moat Monitor -->
+    <section class="card" style="margin-bottom: 24px;">
+      <div class="card-header-flex">
+        <div class="card-title">
+          <i class="fa-solid fa-cubes-stacked"></i>
+          <span>保單扣費順位護城河水庫監控 (Fee Deduction Moat Monitor)</span>
+        </div>
+        <span class="badge badge-emerald">健康度: 100% 極高 (安全無虞)</span>
+      </div>
+
+      <div class="moat-gauge-card">
+        <div class="moat-header">
+          <div>
+            <div style="font-size: 15px; font-weight: 800; color: var(--text-primary);">
+              順位 1 台灣股市50精選(3) 扣費水庫水位條
+            </div>
+            <div style="font-size: 12px; color: var(--text-muted); margin-top: 2px;">
+              契約約定費用由順位 1 優先扣除相應單位數，完全保護順位 2~4 之 180 萬三大高息資產單位數
+            </div>
+          </div>
+          <div style="text-align: right;">
+            <div style="font-size: 18px; font-weight: 800; color: var(--color-emerald);">
+              可支應約 1,014 個月 (約 84.5 年)
+            </div>
+            <span class="badge badge-emerald" style="margin-top: 4px;">安全係數: 超高</span>
+          </div>
+        </div>
+
+        <div class="moat-bar-track">
+          <div class="moat-bar-fill" style="width: 100%;"></div>
+        </div>
+
+        <div class="moat-stats-row">
+          <div class="stat-item">
+            <span class="stat-item-label">目前持有單位數</span>
+            <span class="stat-item-value">3,230.104392 單位</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-item-label">最新評價現值</span>
+            <span class="stat-item-value text-emerald">NT$ 202,885</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-item-label">每月預估扣除費用</span>
+            <span class="stat-item-value">約 NT$ 100 ~ 200</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-item-label">水庫警戒警報線</span>
+            <span class="stat-item-value" style="color: #dc2626;">NT$ 50,000 (預警值)</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. 4 Extreme Crisis Scenarios -->
+    <section class="card" style="margin-bottom: 24px;">
+      <div class="card-header-flex">
+        <div class="card-title">
+          <i class="fa-solid fa-shield-halved"></i>
+          <span>四大市場極端情境模擬與作戰劇本 (4 Extreme Crisis Playbooks)</span>
+        </div>
+        <span class="badge badge-primary">經理人實戰歷史借鏡 (1978 迄今)</span>
+      </div>
+
+      <div class="crisis-grid">
+
+        <!-- Scenario 1 -->
+        <div class="crisis-card">
+          <div class="crisis-header">
+            <div class="crisis-icon icon-purple">
+              <i class="fa-solid fa-arrow-trend-down"></i>
+            </div>
+            <div class="crisis-title-box">
+              <h4>情境一：停滯性通膨與股債雙殺</h4>
+              <div class="crisis-tag">歷史原型：1979-1981 伏爾克緊縮、2022 暴力升息</div>
+            </div>
+          </div>
+          <div class="crisis-desc-block">
+            <strong>市場特徵：</strong>CPI 居高不下，央行暴力升息，高本益比科技股遭估值殺戮，債券價格同步受利率衝擊。
+          </div>
+          <div class="crisis-desc-block">
+            <strong>YU 部位影響：</strong>台股50短期估值承壓；三大多重資產債券價格承壓，但月配息率因高利率環境攀升至 8%~9.5%。
+          </div>
+          <div class="crisis-rx-block">
+            <strong>經理人應變處方：</strong><br>
+            • 淨值觸及黃燈（NT$ 1,940,000）時，將台股50之 50% 轉入貨幣基金。<br>
+            • 強調高利率下月配現金更豐厚，只要不盲目殺低，利息將在 12~18 個月內迅速回補價格回撤。
+          </div>
+        </div>
+
+        <!-- Scenario 2 -->
+        <div class="crisis-card">
+          <div class="crisis-header">
+            <div class="crisis-icon icon-rose">
+              <i class="fa-solid fa-burst"></i>
+            </div>
+            <div class="crisis-title-box">
+              <h4>情境二：全球流動性崩潰與恐慌熔斷</h4>
+              <div class="crisis-tag">歷史原型：2008 雷曼倒閉、2020 新冠四度熔斷</div>
+            </div>
+          </div>
+          <div class="crisis-desc-block">
+            <strong>市場特徵：</strong>市場無差別拋售一切資產，VIX 瞬間突破 50，高收益債利差飆破 800 bps，資金狂湧美元現金與美債。
+          </div>
+          <div class="crisis-desc-block">
+            <strong>YU 部位影響：</strong>跨國各類資產急挫，帳戶價值在 2 週內面臨 7%~12% 劇烈震盪考驗。
+          </div>
+          <div class="crisis-rx-block">
+            <strong>經理人應變處方：</strong><br>
+            • 跌破橘燈（NT$ 1,880,000）時：台股50全數轉入貨幣基金。<br>
+            • 跌破紅燈（NT$ 1,800,000）時：多重資產 50%~70% 轉換入貨幣/短天期公債避風港，鎖死本金殘值，確保 NT$ 280 萬身故保額絕對永續。
+          </div>
+        </div>
+
+        <!-- Scenario 3 -->
+        <div class="crisis-card">
+          <div class="crisis-header">
+            <div class="crisis-icon icon-amber">
+              <i class="fa-solid fa-landmark-flag"></i>
+            </div>
+            <div class="crisis-title-box">
+              <h4>情境三：台海地緣政治黑天鵝與台幣重貶</h4>
+              <div class="crisis-tag">歷史原型：1996 台海飛彈危機、2022 俄烏衝突</div>
+            </div>
+          </div>
+          <div class="crisis-desc-block">
+            <strong>市場特徵：</strong>外資大舉提款台股，新台幣劇烈貶值，台灣在地資產短期面臨流動性折價。
+          </div>
+          <div class="crisis-desc-block">
+            <strong>YU 部位影響：</strong>台股50精選承壓，但<strong>90% 跨國三大旗艦標的展現極強美元匯兌升值保護力</strong>，天然對沖台股跌幅！
+          </div>
+          <div class="crisis-rx-block">
+            <strong>經理人應變處方：</strong><br>
+            • 跨國 90% 全球護城河發揮天然避風港效果。<br>
+            • 台股50若跌破 53.38 轉為貨幣停泊標的。<br>
+            • 每月現金配息持續匯入，維持強大購買力。
+          </div>
+        </div>
+
+        <!-- Scenario 4 -->
+        <div class="crisis-card">
+          <div class="crisis-header">
+            <div class="crisis-icon icon-blue">
+              <i class="fa-solid fa-triangle-exclamation"></i>
+            </div>
+            <div class="crisis-title-box">
+              <h4>情境四：高收益信用市場違約潮</h4>
+              <div class="crisis-tag">歷史原型：2002 信用危機、2015-2016 能源債爆雷</div>
+            </div>
+          </div>
+          <div class="crisis-desc-block">
+            <strong>市場特徵：</strong>低評級非投資等級債違約率飆高，信用利差急遽拉大，配息型基金淨值下跌。
+          </div>
+          <div class="crisis-desc-block">
+            <strong>YU 部位影響：</strong>多重資產中非投資級債部位承壓，配息中來自本金比率短暫提升。
+          </div>
+          <div class="crisis-rx-block">
+            <strong>經理人應變處方：</strong><br>
+            • 檢核安聯、聯博、富蘭克林三檔標的配置（富蘭克林偏平衡、聯博全球組合、安聯黃金三角，互補性高）。<br>
+            • 單一標的若單月回撤 &gt; 8%，啟動再平衡微調，轉為較抗跌之防禦型標的。
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 6. Manager Fiduciary SOP Checklist -->
+    <section class="card" style="margin-bottom: 24px;">
+      <div class="card-header-flex">
+        <div class="card-title">
+          <i class="fa-solid fa-clipboard-check"></i>
+          <span>經理人全天候常態作業程序 (Fiduciary SOP & Checklists)</span>
+        </div>
+        <span class="badge badge-gold">紀律執行 · 守護資產</span>
+      </div>
+
+      <div class="sop-checklist-container">
+
+        <!-- Checklist 1: Daily -->
+        <div class="sop-checklist-card">
+          <div class="sop-card-title">
+            <i class="fa-solid fa-sun" style="color: #d97706;"></i>
+            <span>每日開盤前風控檢核 (Daily Risk Radar)</span>
+          </div>
+          <ul class="checklist-items-group">
+            <li class="checklist-item"><i class="fa-solid fa-circle-check"></i> 檢核 CBOE VIX 恐慌指數（正常 &lt; 20；警戒 25；恐慌 40）</li>
+            <li class="checklist-item"><i class="fa-solid fa-circle-check"></i> 檢核美國非投資等級債信用利差（HY OAS Spread）</li>
+            <li class="checklist-item"><i class="fa-solid fa-circle-check"></i> 檢核標普 500、費城半導體收盤走勢與台股開盤動態</li>
+            <li class="checklist-item"><i class="fa-solid fa-circle-check"></i> 計算 YU 保單最新淨值與黃燈緩衝區（目前 +NT$ 63,461）</li>
+          </ul>
+        </div>
+
+        <!-- Checklist 2: Monthly -->
+        <div class="sop-checklist-card">
+          <div class="sop-card-title">
+            <i class="fa-solid fa-calendar-days" style="color: var(--color-primary);"></i>
+            <span>每月配息日前 3 日檢核 (Dividend Audit)</span>
+          </div>
+          <ul class="checklist-items-group">
+            <li class="checklist-item"><i class="fa-solid fa-circle-check"></i> 查核三大基金最新官方公告之每單位配息金額</li>
+            <li class="checklist-item"><i class="fa-solid fa-circle-check"></i> 驗算配息總額是否落在 NT$ 10,500 ~ 12,000 預期區間</li>
+            <li class="checklist-item"><i class="fa-solid fa-circle-check"></i> 查核官方公布之「配息組成項目」（本金比率是否異常）</li>
+            <li class="checklist-item"><i class="fa-solid fa-circle-check"></i> 確認收益分配撥款日，提醒客戶查對指定銀行帳戶</li>
+          </ul>
+        </div>
+
+        <!-- Checklist 3: Quarterly -->
+        <div class="sop-checklist-card">
+          <div class="sop-card-title">
+            <i class="fa-solid fa-shield-heart" style="color: #7c3aed;"></i>
+            <span>每季策略再平衡與保單健檢 (Strategic Audit)</span>
+          </div>
+          <ul class="checklist-items-group">
+            <li class="checklist-item"><i class="fa-solid fa-circle-check"></i> 驗算順位 1 台股50扣費水庫水位與可支應年限</li>
+            <li class="checklist-item"><i class="fa-solid fa-circle-check"></i> 檢視三大經理機構最新持倉與存續期間調整</li>
+            <li class="checklist-item"><i class="fa-solid fa-circle-check"></i> 確保 NT$ 2,800,000 身故保險金槓桿倍數 100% 有效</li>
+            <li class="checklist-item"><i class="fa-solid fa-circle-check"></i> 出具《客戶 YU 專屬季度風控與投資策略報告》</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 7. Footer -->
+    <footer class="footer-info">
+      <p>YU 專屬基金經理人 · 極端情境量化作戰室 | 服務通路：永達保經北十 | 業務員：王執定</p>
+      <p style="color: var(--text-light); margin-top: 4px;">
+        操盤資歷：自 1978 年歷經多次景氣循環與金融危機 | 核心信條：行情不可預測，但應變必須預先鎖死 | 所有數據均經 100% 官方真實資料驗證
+      </p>
+    </footer>
+
+  </div>
+
+  <!-- Application Logic -->
+  <script src="app.js"></script>
+</body>
+</html>

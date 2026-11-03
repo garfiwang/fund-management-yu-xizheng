@@ -26,8 +26,9 @@
 - [x] 階段四：開發 YU 專屬基金觀察總儀表板（`index.html`、`styles.css`、`app.js`）
 - [x] 階段五：完成 4 檔基金獨立專屬深度研究子分頁（`tctpl003_tw50_research.html`、`bgtal009_allianz_research.html`、`bgtab005_alliancebernstein_research.html`、`bgtft004_franklin_research.html`）
 - [x] 階段六：發布至 GitHub Pages 線上公開網頁（https://garfiwang.github.io/fund-management-yu-xizheng/）
-- [ ] 階段七：【重要待辦】加入保單扣繳費用金額（依扣費順位 1 台股50優先扣繳並記錄單位數異動）
-- [ ] 階段八：持續追蹤 11 月份首期月配息入帳明細與最新淨值動態
+- [x] 階段七：【專屬操盤】建立 YU 專屬基金經理人作戰室與極端情境作戰手冊（`manager_war_room.html`、`accounts/yu_manager_playbook.md`，歷經 1978 迄今實戰經驗鎖死五級警戒與標的轉換防禦機制）
+- [ ] 階段八：【重要待辦】加入保單扣繳費用金額（依扣費順位 1 台股50優先扣繳並記錄單位數異動）
+- [ ] 階段九：持續追蹤 11 月份首期月配息入帳明細與最新淨值動態
 
 ## 資料夾結構
 ```
@@ -36,7 +37,8 @@
 ├── .nojekyll
 ├── AGENTS.md
 ├── handoff.md
-├── index.html                                    # 基金觀察總儀表板 (簡單、明亮、專業)
+├── index.html                                    # 基金觀察總儀表板 (含經理人全天候量化風控雷達)
+├── manager_war_room.html                         # YU 專屬基金經理人作戰室 (五級警戒燈號與四大極端劇本)
 ├── styles.css                                    # 專屬明亮專業金融樣式
 ├── app.js                                        # 雙軌容錯 (file:// 離線 + fetch) 驅動核心
 ├── tctpl003_tw50_research.html                   # 台灣股市50精選 (TCTPL003) 獨立研究子頁面
@@ -52,9 +54,10 @@
 ├── 截圖 2026-10-30 10.32.24.png                   # 富蘭克林華美評價現值截圖
 ├── 截圖 2026-10-30 10.32.31.png                   # 台灣股市50精選評價現值截圖
 ├── accounts/
-│   └── yu_portfolio.md                           # 客戶 YU 檔案與投資組合深度說明
+│   ├── yu_portfolio.md                           # 客戶 YU 檔案與投資組合深度說明
+│   └── yu_manager_playbook.md                    # YU 專屬基金經理人極端情境作戰手冊 (1978 迄今實戰)
 └── data/
-    ├── accounts.json                             # 帳戶總覽與持倉數據
+    ├── accounts.json                             # 帳戶總覽、持倉數據與經理人五級風控量化參數
     ├── fund_details.json                         # 4 檔基金詳細資料與走勢歷史
     └── transactions.json                         # 交易流水明細（5 筆真實紀錄）
 ```

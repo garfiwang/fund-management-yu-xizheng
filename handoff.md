@@ -3,13 +3,20 @@
 > 任何 Agent、任何電腦接手前**必讀**；收工時**必更新**。本檔只放交接必需的精簡資訊，詳細脈絡放 Obsidian（L3）。
 
 ## ⏯️ 目前做到哪
-客戶代號 **YU**（保單號碼：`000038776551318`，安達人壽富貴大贏家）專屬基金觀察總儀表板與 4 檔基金獨立研究專頁建置完成，並已成功發布至 GitHub Pages 線上公開網頁（HTTP 200 正常運行）。
+1. 客戶代號 **YU**（保單號碼：`000038776551318`，安達人壽富貴大贏家）專屬基金觀察總儀表板與 4 檔基金獨立研究專頁建置完成，並已成功發布至 GitHub Pages 線上公開網頁（HTTP 200 正常運行）。
+2. **【專屬操盤】建立 YU 專屬基金經理人全天候量化風控與作戰體系**：
+   - 經理人操盤核心信條：「行情不可預測，但應變必須預先鎖死。對於極度厭惡風險的客戶 YU，我們絕不能等市場暴跌才來救火，而必須在事前把所有可能情境的觸發點、數字、門檻與轉換標的全部編制成作戰手冊。」
+   - 完成深度作戰手冊：`accounts/yu_manager_playbook.md`（完整收錄 1978 年迄今 48 年歷經高通膨與金融海嘯之實戰紀律、五級警戒信號燈量化矩陣、四大極端市場情境推演、保單扣費順位護城河精算、安達保單標的轉換 Switching 指南與 Fiduciary SOP 查核清單）。
+   - 完成全新獨立線上專頁：`manager_war_room.html`（YU 專屬基金經理人極端情境作戰室）。
+   - 完成總儀表板整合：在 `index.html` 嵌入「經理人全天候量化風控雷達橫幅」，全站 5 頁導航一致打通。
+   - 更新結構化資料：在 `data/accounts.json` 與 `app.js` 加入 `managerRisk` 節點，保持動態計算與 file:// 本地離線雙軌容錯。
 
 ## 🚦 目前狀態
 - **線上發布網址**：[https://garfiwang.github.io/fund-management-yu-xizheng/](https://garfiwang.github.io/fund-management-yu-xizheng/)
 - **GitHub 儲存庫**：[garfiwang/fund-management-yu-xizheng](https://github.com/garfiwang/fund-management-yu-xizheng)（Public）
 - **頁面清單**：
-  - `index.html`：基金觀察總儀表板（簡單、明亮、專業金融風格，4 大 KPI 卡片、雙互動圖表、持倉總表、交易流水篩選）
+  - `index.html`：基金觀察總儀表板（含專屬經理人量化風控雷達、4 大 KPI 卡片、雙互動圖表、持倉總表、交易流水篩選）
+  - `manager_war_room.html`：**YU 專屬基金經理人作戰室**（五級警戒燈號、硬性量化觸發門檻、扣費水庫水位條、四大危機劇本與 SOP）
   - `tctpl003_tw50_research.html`：台灣股市50精選(3) 獨立研究專頁
   - `bgtal009_allianz_research.html`：安聯收益成長多重資產基金 獨立研究專頁
   - `bgtab005_alliancebernstein_research.html`：聯博多元資產收益組合基金 獨立研究專頁
@@ -17,6 +24,8 @@
 - **數據與資產概況**：
   - 目前帳戶總價值：**NT$ 2,003,461**（原始躉繳 NT$ 2,000,000，帳面增值 +NT$ 3,461）
   - 投資部位未實現損益：**+NT$ 3,820**（**+0.191%**，台股50精選率先上漲至 62.8107，獲利 +1.92%）
+  - 經理人風控警戒狀態：🟢 **綠燈 · 常態巡航模式**（距黃燈防線尚有 **+NT$ 63,461 / +3.17%** 緩衝；距紅燈終極底線尚有 **+NT$ 203,461 / +10.16%**）
+  - 順位 1 扣費水庫水位：**NT$ 202,885**（可支應約 1,014 個月保單費用，180 萬高息本金單位數 100% 零侵蝕）
   - 預估每月配息現金流：約 **NT$ 10,500 ~ 12,000**（全數約定「配現金」至指定銀行帳戶）
   - 壽險身故保障：**NT$ 2,800,000**（保障倍數 140%）
 
@@ -34,7 +43,8 @@
 - 配息方式為「配現金」（匯出指定帳戶），與舊案 Lee（自動再投入滾入單位數）不同，帳戶總價值主要由淨值波動與費用扣除決定。
 
 ## 🕐 最後更新
-- 時間：2026-10-30 22:33
+- 時間：2026-11-03 09:56
 - 更新者：Antigravity @ Mac
-- Git push：✅ 已推送到 GitHub [garfiwang/fund-management-yu-xizheng](https://github.com/garfiwang/fund-management-yu-xizheng)
+- 項目：建立 YU 專屬基金經理人作戰室與全天候量化風控作戰手冊 (1978 迄今實戰體系)
+- Git push：✅ 準備推送至 GitHub [garfiwang/fund-management-yu-xizheng](https://github.com/garfiwang/fund-management-yu-xizheng)
 - Pages：✅ 已啟用（[https://garfiwang.github.io/fund-management-yu-xizheng/](https://garfiwang.github.io/fund-management-yu-xizheng/)）

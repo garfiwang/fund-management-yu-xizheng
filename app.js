@@ -37,6 +37,17 @@ const DEFAULT_ACCOUNT_DATA = {
     loanRate: 4.3,
     loanRatio: 0.0
   },
+  managerRisk: {
+    managerTitle: "YU 專屬基金經理人",
+    experienceSince: 1978,
+    coreCreed: "行情不可預測，但應變必須預先鎖死。事前把所有可能情境的觸發點、數字、門檻與轉換標的全部編制成作戰手冊。",
+    currentSignal: "GREEN",
+    currentSignalName: "常態巡航模式",
+    moatWaterLevel: {
+      currentValue: 202885,
+      estimatedSurvivalMonths: 1014
+    }
+  },
   holdings: [
     {
       code: "TCTPL003",
@@ -247,7 +258,70 @@ document.addEventListener("DOMContentLoaded", async () => {
   renderHoldingsTable();
   renderTransactionsTable("all");
   renderCharts();
+  renderManagerRadar();
+  renderWarRoom();
 });
+
+// 渲染經理人全天候風控雷達 (index.html 首頁)
+function renderManagerRadar() {
+  const f = globalAccountData.financials;
+  if (!f) return;
+
+  const currentNav = f.currentAccountValue || 2003461;
+  const yellowBuffer = currentNav - 1940000;
+  const redBuffer = currentNav - 1800000;
+
+  const tw50 = (globalAccountData.holdings || []).find(h => h.code === "TCTPL003");
+  const tw50Val = tw50 ? tw50.currentValue : 202885;
+
+  const radarYellowEl = document.getElementById("radarYellowBuffer");
+  if (radarYellowEl) {
+    radarYellowEl.textContent = `+${formatCurrency(yellowBuffer)} (+${((yellowBuffer / currentNav) * 100).toFixed(2)}%)`;
+  }
+
+  const radarRedEl = document.getElementById("radarRedBuffer");
+  if (radarRedEl) {
+    radarRedEl.textContent = `+${formatCurrency(redBuffer)} (+${((redBuffer / currentNav) * 100).toFixed(2)}%)`;
+  }
+
+  const radarMoatEl = document.getElementById("radarMoatLevel");
+  if (radarMoatEl) {
+    radarMoatEl.textContent = `${formatCurrency(tw50Val)} (安全充足)`;
+  }
+}
+
+// 渲染經理人作戰室 (manager_war_room.html)
+function renderWarRoom() {
+  const f = globalAccountData.financials;
+  if (!f) return;
+
+  const currentNav = f.currentAccountValue || 2003461;
+  const yellowBuffer = currentNav - 1940000;
+  const orangeBuffer = currentNav - 1880000;
+  const redBuffer = currentNav - 1800000;
+
+  const tw50 = (globalAccountData.holdings || []).find(h => h.code === "TCTPL003");
+  const tw50Val = tw50 ? tw50.currentValue : 202885;
+  const tw50Units = tw50 ? tw50.units : 3230.104392;
+
+  const warroomTotalEl = document.getElementById("warroomTotalValuation");
+  if (warroomTotalEl) warroomTotalEl.textContent = formatCurrency(currentNav);
+
+  const warroomYellowEl = document.getElementById("warroomYellowBuffer");
+  if (warroomYellowEl) warroomYellowEl.textContent = `+${formatCurrency(yellowBuffer)} (+${((yellowBuffer / currentNav) * 100).toFixed(2)}%)`;
+
+  const warroomOrangeEl = document.getElementById("warroomOrangeBuffer");
+  if (warroomOrangeEl) warroomOrangeEl.textContent = `+${formatCurrency(orangeBuffer)} (+${((orangeBuffer / currentNav) * 100).toFixed(2)}%)`;
+
+  const warroomRedEl = document.getElementById("warroomRedBuffer");
+  if (warroomRedEl) warroomRedEl.textContent = `+${formatCurrency(redBuffer)} (+${((redBuffer / currentNav) * 100).toFixed(2)}%)`;
+
+  const warroomMoatValEl = document.getElementById("warroomMoatVal");
+  if (warroomMoatValEl) warroomMoatValEl.textContent = formatCurrency(tw50Val);
+
+  const warroomMoatUnitsEl = document.getElementById("warroomMoatUnits");
+  if (warroomMoatUnitsEl) warroomMoatUnitsEl.textContent = `${formatNumber(tw50Units, 4)} 單位`;
+}
 
 // 渲染 KPI 指標卡片
 function renderKPIs() {
