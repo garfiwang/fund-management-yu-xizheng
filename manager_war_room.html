@@ -50,9 +50,9 @@
           <a href="bgtab005_alliancebernstein_research.html" class="nav-link-btn"><i class="fa-solid fa-shield-halved"></i> 聯博多元</a>
           <a href="bgtft004_franklin_research.html" class="nav-link-btn"><i class="fa-solid fa-gem"></i> 富蘭克林</a>
         </nav>
-        <div class="status-badge">
-          <span class="status-dot"></span>
-          <span>綠燈巡航 · 安全無虞</span>
+        <div class="status-badge" style="background: var(--color-gold-light); color: var(--color-gold); border-color: var(--color-gold-border);">
+          <span class="status-dot" style="background: #d97706; box-shadow: 0 0 0 2px rgba(217, 119, 6, 0.25);"></span>
+          <span>黃燈警戒 · 戰術減震</span>
         </div>
       </div>
     </header>
@@ -69,13 +69,13 @@
               YU 專屬基金經理人 · 全天候量化風控作戰總部
             </h2>
             <div style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">
-              安達人壽富貴大贏家變額萬能壽險戊型 | 契約始期: 2026/10/01 | 身故保障: NT$ 2,800,000
+              安達人壽富貴大贏家變額萬能壽險戊型 | 契約始期: 2026/10/01 | 身故保障: NT$ 2,791,307 (已扣減現金配息 NT$ 8,693)
             </div>
           </div>
         </div>
-        <div class="radar-signal-pill" style="font-size: 14px; padding: 8px 18px;">
-          <span class="radar-pulse-dot"></span>
-          <span>當前狀態：🟢 綠燈 · 常態巡航模式</span>
+        <div class="radar-signal-pill pill-yellow" style="font-size: 14px; padding: 8px 18px;">
+          <span class="radar-pulse-dot" style="background: #d97706; box-shadow: 0 0 0 2px rgba(217, 119, 6, 0.25);"></span>
+          <span>當前狀態：🟡 黃燈 · 一級警戒 / 戰術減震模式</span>
         </div>
       </div>
 
@@ -88,23 +88,23 @@
       <div class="warroom-kpi-grid">
         <div class="radar-stat-box" style="background: var(--bg-subtle); border-color: var(--border-color);">
           <span class="radar-stat-label" style="color: var(--text-muted);"><i class="fa-solid fa-vault"></i> 目前保單帳戶總價值</span>
-          <span class="radar-stat-val" id="warroomTotalValuation" style="color: var(--text-primary);">NT$ 2,003,461</span>
-          <span class="radar-stat-sub">原始躉繳本金 NT$ 2,000,000 (淨值增值 +NT$ 3,461)</span>
+          <span class="radar-stat-val" id="warroomTotalValuation" style="color: var(--text-primary);">NT$ 1,926,349</span>
+          <span class="radar-stat-sub">原始躉繳本金 NT$ 2,000,000 (帳面回撤 -NT$ 73,651)</span>
         </div>
         <div class="radar-stat-box" style="background: var(--bg-subtle); border-color: var(--border-color);">
-          <span class="radar-stat-label" style="color: #b45309;"><i class="fa-solid fa-flag-checkered"></i> 距首道黃燈防線緩衝</span>
-          <span class="radar-stat-val" id="warroomYellowBuffer" style="color: #b45309;">+NT$ 63,461 (+3.17%)</span>
+          <span class="radar-stat-label" style="color: #b45309;"><i class="fa-solid fa-flag-checkered"></i> 距首道黃燈防線</span>
+          <span class="radar-stat-val" id="warroomYellowBuffer" style="color: #b45309;">已觸發一級警戒 (-NT$ 13,651)</span>
           <span class="radar-stat-sub">黃燈門檻 NT$ 1,940,000 (-3.0%)</span>
         </div>
         <div class="radar-stat-box" style="background: var(--bg-subtle); border-color: var(--border-color);">
-          <span class="radar-stat-label" style="color: #b91c1c;"><i class="fa-solid fa-shield-cat"></i> 距終極紅燈防線緩衝</span>
-          <span class="radar-stat-val" id="warroomRedBuffer" style="color: #b91c1c;">+NT$ 203,461 (+10.16%)</span>
-          <span class="radar-stat-sub">鋼鐵止損門檻 NT$ 1,800,000 (-10.0%)</span>
+          <span class="radar-stat-label" style="color: #ea580c;"><i class="fa-solid fa-shield-virus"></i> 距二級橘燈防線緩衝</span>
+          <span class="radar-stat-val" id="warroomOrangeBuffer" style="color: #ea580c;">+NT$ 46,349 (+2.41%)</span>
+          <span class="radar-stat-sub">橘燈減震門檻 NT$ 1,880,000 (-6.0%)</span>
         </div>
         <div class="radar-stat-box" style="background: var(--bg-subtle); border-color: var(--border-color);">
           <span class="radar-stat-label" style="color: var(--color-emerald);"><i class="fa-solid fa-cubes-stacked"></i> 順位 1 台股50扣費水庫</span>
-          <span class="radar-stat-val" id="warroomMoatVal" style="color: var(--color-emerald);">NT$ 202,885</span>
-          <span class="radar-stat-sub" id="warroomMoatUnits">3,230.1044 單位 · 支應約 1,014 個月</span>
+          <span class="radar-stat-val" id="warroomMoatVal" style="color: var(--color-emerald);">NT$ 192,635</span>
+          <span class="radar-stat-sub" id="warroomMoatUnits">已扣除 6 筆保費 NT$ 8,449 · 水庫充足</span>
         </div>
       </div>
     </section>
@@ -116,7 +116,7 @@
           <i class="fa-solid fa-traffic-light"></i>
           <span>全天候「五級警戒信號燈」量化防禦矩陣 (The 5-Level Risk Defense Matrix)</span>
         </div>
-        <span class="badge badge-emerald">硬性量化觸發 · 嚴禁主觀臆測</span>
+        <span class="badge badge-gold" style="background: var(--color-gold-light); color: var(--color-gold); border: 1px solid var(--color-gold-border);">當前觸發：黃燈一級警戒</span>
       </div>
       <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 16px;">
         歷經 1978 年迄今五次全球世紀股災淬鍊，以下各燈號均訂有具體數學觸發線與安達保單標的轉換（Switching）處方。當市場觸發任何門檻，系統自動進入對應作戰序列：
@@ -125,13 +125,13 @@
       <div class="defense-matrix-container">
 
         <!-- 1. Green Signal -->
-        <div class="signal-defense-card active-signal">
+        <div class="signal-defense-card">
           <div class="signal-card-header">
             <div class="signal-card-title">
               <i class="fa-solid fa-circle-check" style="color: #059669; font-size: 20px;"></i>
               <span>🟢 綠燈：常態巡航模式 (Normal Cruising Protocol)</span>
             </div>
-            <span class="signal-pill-tag pill-green"><i class="fa-solid fa-check"></i> 當前生效中 · 安全指標全面達標</span>
+            <span class="signal-pill-tag"><i class="fa-solid fa-clock-rotate-left"></i> 前期標準 (已跨入黃燈一級警戒)</span>
           </div>
           <div class="signal-specs-grid">
             <div>
@@ -147,26 +147,26 @@
               <div class="spec-item-value">&lt; 20 (市場流動性健康)</div>
             </div>
             <div>
-              <div class="spec-item-label">目前實際數值 / 緩衝</div>
-              <div class="spec-item-value text-emerald">NT$ 2,003,461 (+NT$ 23,461)</div>
+              <div class="spec-item-label">前期數值 (10/30)</div>
+              <div class="spec-item-value text-emerald">NT$ 2,003,461 (+NT$ 3,461)</div>
             </div>
           </div>
           <div class="signal-action-box">
             <div class="signal-action-title"><i class="fa-solid fa-gears"></i> 經理人操盤作戰指令：</div>
             1. 維持經典攻守配置：10% 台灣股市50精選 + 90% 跨國三大旗艦多重資產。<br>
-            2. 三大月配高息標的全數約定「配現金」，每月領回約 <strong>NT$ 10,500 ~ 12,000</strong> 現金被動收入直接匯入客戶銀行帳戶。<br>
+            2. 三大月配高息標的全數約定「配現金」，每月領回現金被動收入直接匯入客戶銀行帳戶。<br>
             3. 保單行政管理費按約定由順位 1（台股50精選）扣減單位數，保護順位 2~4 高息標的單位數 100% 完整無損。
           </div>
         </div>
 
         <!-- 2. Yellow Signal -->
-        <div class="signal-defense-card yellow-signal">
+        <div class="signal-defense-card yellow-signal active-signal">
           <div class="signal-card-header">
             <div class="signal-card-title">
               <i class="fa-solid fa-triangle-exclamation" style="color: #d97706; font-size: 20px;"></i>
               <span>🟡 黃燈：一級警戒 / 戰術減震模式 (Tactical Cushioning)</span>
             </div>
-            <span class="signal-pill-tag pill-yellow"><i class="fa-solid fa-clock"></i> 待命中 · 尚有 +NT$ 63,461 緩衝區 (+3.17%)</span>
+            <span class="signal-pill-tag pill-yellow"><i class="fa-solid fa-triangle-exclamation"></i> 當前生效中 · 啟動戰術減震防禦 (現值 NT$ 1,926,349)</span>
           </div>
           <div class="signal-specs-grid">
             <div>
@@ -188,9 +188,9 @@
           </div>
           <div class="signal-action-box">
             <div class="signal-action-title"><i class="fa-solid fa-gears"></i> 經理人操盤作戰指令：</div>
-            1. 啟動高頻防禦監控：經理人發布每週 2 次風控快報，主動查核各標的未實現跌幅。<br>
-            2. 戰術獲利了結 / 減震轉換：評估將台股50部位之 50%（約 NT$ 100,000）轉換至安達保單內「新台幣貨幣市場基金」，鎖定現金池以備後續扣費。<br>
-            3. 檢視三大配息基金官方公告之「配息組成項目」，確認本金侵蝕比率是否異常升高（警戒線 &gt; 60%）。
+            1. <strong>啟動高頻防禦監控</strong>：經理人發布每週風控快報，主動查核各標的未實現跌幅與除息反應。<br>
+            2. <strong>戰術獲利了結 / 減震轉換</strong>：評估將台股50部位之 50%（約 NT$ 95,000）轉換至安達保單內「新台幣貨幣市場基金」，鎖定現金池以備後續扣費。<br>
+            3. <strong>檢視三大配息基金現金流</strong>：首期現金配息 NT$ 8,693 已全額匯入客戶銀行帳戶，本金部位持續發揮收息功能。
           </div>
         </div>
 
@@ -325,28 +325,28 @@
           </div>
           <div style="text-align: right;">
             <div style="font-size: 18px; font-weight: 800; color: var(--color-emerald);">
-              可支應約 1,014 個月 (約 84.5 年)
+              已成功扣繳 NT$ 8,449 費用 (水位持續充足)
             </div>
             <span class="badge badge-emerald" style="margin-top: 4px;">安全係數: 超高</span>
           </div>
         </div>
 
         <div class="moat-bar-track">
-          <div class="moat-bar-fill" style="width: 100%;"></div>
+          <div class="moat-bar-fill" style="width: 95%;"></div>
         </div>
 
         <div class="moat-stats-row">
           <div class="stat-item">
             <span class="stat-item-label">目前持有單位數</span>
-            <span class="stat-item-value">3,230.104392 單位</span>
+            <span class="stat-item-value">3,121.6172 單位</span>
           </div>
           <div class="stat-item">
             <span class="stat-item-label">最新評價現值</span>
-            <span class="stat-item-value text-emerald">NT$ 202,885</span>
+            <span class="stat-item-value text-emerald">NT$ 192,635</span>
           </div>
           <div class="stat-item">
-            <span class="stat-item-label">每月預估扣除費用</span>
-            <span class="stat-item-value">約 NT$ 100 ~ 200</span>
+            <span class="stat-item-label">累計已扣繳保費</span>
+            <span class="stat-item-value" style="color: var(--color-rose);">NT$ 8,449 (6筆明細)</span>
           </div>
           <div class="stat-item">
             <span class="stat-item-label">水庫警戒警報線</span>

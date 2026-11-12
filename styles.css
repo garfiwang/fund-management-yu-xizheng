@@ -268,18 +268,24 @@ body {
    ========================================================================== */
 .metrics-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 16px;
   margin-bottom: 24px;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
+  .metrics-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 800px) {
   .metrics-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 540px) {
   .metrics-grid {
     grid-template-columns: 1fr;
   }
@@ -328,6 +334,7 @@ body {
 .metric-card.emerald .metric-icon { background: var(--color-emerald-light); color: var(--color-emerald); }
 .metric-card.cyan .metric-icon { background: var(--color-cyan-light); color: var(--color-cyan); }
 .metric-card.purple .metric-icon { background: var(--color-purple-light); color: var(--color-purple); }
+.metric-card.rose .metric-icon { background: var(--color-rose-light); color: var(--color-rose); }
 
 .metric-value {
   font-size: 26px;

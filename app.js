@@ -15,23 +15,28 @@ const DEFAULT_ACCOUNT_DATA = {
     effectiveDate: "2026/10/01",
     underwritingDate: "2026/10/13",
     firstInvestmentDate: "2026/10/27",
-    lastEvaluationDate: "2026/10/30"
+    lastEvaluationDate: "2026/11/12"
   },
   financials: {
     basicSumAssured: 2800000,
-    lifeDeathBenefit: 2800000,
+    lifeDeathBenefit: 2791307,
     singlePremium: 2000000,
     accumulatedPremiumPaid: 2000000,
-    currentAccountValue: 2003461,
+    currentAccountValue: 1926349,
     netInvestmentCost: 1999641,
-    totalFeesPaid: 1000,
-    totalUnrealizedGain: 3820,
-    totalRoi: 0.191,
-    accountNetGrowth: 3461,
-    accountNetGrowthRate: 0.173,
-    accumulatedDividendsCash: 0,
-    estimatedMonthlyDividendMin: 10500,
-    estimatedMonthlyDividendMax: 12000,
+    totalFeesPaid: 9449,
+    insuranceFeesDeducted: 8449,
+    subscriptionFeesPaid: 1000,
+    totalUnrealizedGain: -73292,
+    totalRoi: -3.665,
+    accountNetGrowth: -73651,
+    accountNetGrowthRate: -3.683,
+    totalClientEquity: 1935042,
+    totalReturnWithCash: -64958,
+    totalReturnRateWithCash: -3.248,
+    accumulatedDividendsCash: 8693,
+    estimatedMonthlyDividendMin: 8500,
+    estimatedMonthlyDividendMax: 11000,
     loanPrincipal: 0,
     loanInterest: 0,
     loanRate: 4.3,
@@ -41,11 +46,12 @@ const DEFAULT_ACCOUNT_DATA = {
     managerTitle: "YU 專屬基金經理人",
     experienceSince: 1978,
     coreCreed: "行情不可預測，但應變必須預先鎖死。事前把所有可能情境的觸發點、數字、門檻與轉換標的全部編制成作戰手冊。",
-    currentSignal: "GREEN",
-    currentSignalName: "常態巡航模式",
+    currentSignal: "YELLOW",
+    currentSignalName: "一級警戒 / 戰術減震模式",
     moatWaterLevel: {
-      currentValue: 202885,
-      estimatedSurvivalMonths: 1014
+      currentValue: 192635,
+      actualFeesDeducted: 8449,
+      estimatedSurvivalMonths: 963
     }
   },
   holdings: [
@@ -55,15 +61,16 @@ const DEFAULT_ACCOUNT_DATA = {
       shortName: "台股50精選",
       priority: 1,
       allocationRatio: 0.10,
-      units: 3230.104392,
+      units: 3121.6172,
       buyNav: 61.6280,
       buyAmount: 199065,
       fee: 1000,
-      latestNav: 62.8107,
-      navDate: "2026/10/28",
-      currentValue: 202885,
-      unrealizedGain: 3820,
-      roi: 1.919,
+      insuranceFeeDeducted: 8449,
+      latestNav: 61.7100,
+      navDate: "2026/11/12",
+      currentValue: 192635,
+      unrealizedGain: -6430,
+      roi: -3.230,
       dividendType: "成長累積型",
       dividendMethod: "不配息（資本增值）",
       researchPage: "tctpl003_tw50_research.html",
@@ -80,11 +87,12 @@ const DEFAULT_ACCOUNT_DATA = {
       buyNav: 8.1800,
       buyAmount: 600192,
       fee: 0,
-      latestNav: 8.1800,
-      navDate: "2026/10/27",
-      currentValue: 600192,
-      unrealizedGain: 0,
-      roi: 0.000,
+      cashDividendPaid: 3200,
+      latestNav: 7.8762,
+      navDate: "2026/11/12",
+      currentValue: 577905,
+      unrealizedGain: -22287,
+      roi: -3.713,
       dividendType: "月配息",
       dividendMethod: "配現金 (匯出銀行)",
       researchPage: "bgtal009_allianz_research.html",
@@ -101,11 +109,12 @@ const DEFAULT_ACCOUNT_DATA = {
       buyNav: 6.3700,
       buyAmount: 600192,
       fee: 0,
-      latestNav: 6.3700,
-      navDate: "2026/10/27",
-      currentValue: 600192,
-      unrealizedGain: 0,
-      roi: 0.000,
+      cashDividendPaid: 2800,
+      latestNav: 6.1335,
+      navDate: "2026/11/12",
+      currentValue: 577905,
+      unrealizedGain: -22287,
+      roi: -3.713,
       dividendType: "月配息",
       dividendMethod: "配現金 (匯出銀行)",
       researchPage: "bgtab005_alliancebernstein_research.html",
@@ -122,11 +131,12 @@ const DEFAULT_ACCOUNT_DATA = {
       buyNav: 8.4600,
       buyAmount: 600192,
       fee: 0,
-      latestNav: 8.4600,
-      navDate: "2026/10/27",
-      currentValue: 600192,
-      unrealizedGain: 0,
-      roi: 0.000,
+      cashDividendPaid: 2693,
+      latestNav: 8.1458,
+      navDate: "2026/11/12",
+      currentValue: 577904,
+      unrealizedGain: -22288,
+      roi: -3.713,
       dividendType: "月配息",
       dividendMethod: "配現金 (匯出銀行)",
       researchPage: "bgtft004_franklin_research.html",
@@ -211,6 +221,111 @@ const DEFAULT_TRANSACTIONS = [
     exchangeRate: 1,
     summary: "首期投資配置 30%（扣費順位 4，配現金）",
     status: "已成交"
+  },
+  {
+    id: "TX-20261030-FEE1",
+    date: "2026/10/30",
+    type: "保費/費用扣除",
+    category: "fee",
+    targetCode: "TCTPL003",
+    targetName: "台灣股市50精選(3) (扣費順位 1 扣除)",
+    amount: 100,
+    fee: 100,
+    units: 0,
+    price: 0,
+    exchangeRate: 1,
+    summary: "保單管理費/保單管理費之行政管理費",
+    status: "已扣款完成"
+  },
+  {
+    id: "TX-20261030-FEE2",
+    date: "2026/10/30",
+    type: "保費/費用扣除",
+    category: "fee",
+    targetCode: "TCTPL003",
+    targetName: "台灣股市50精選(3) (扣費順位 1 扣除)",
+    amount: 4000,
+    fee: 4000,
+    units: 0,
+    price: 0,
+    exchangeRate: 1,
+    summary: "標的維護費/保單管理費/保單管理費之帳戶管理費",
+    status: "已扣款完成"
+  },
+  {
+    id: "TX-20261030-FEE3",
+    date: "2026/10/30",
+    type: "保費/費用扣除",
+    category: "fee",
+    targetCode: "TCTPL003",
+    targetName: "台灣股市50精選(3) (扣費順位 1 扣除)",
+    amount: 161,
+    fee: 161,
+    units: 0,
+    price: 0,
+    exchangeRate: 1,
+    summary: "保險成本",
+    status: "已扣款完成"
+  },
+  {
+    id: "TX-20261103-FEE1",
+    date: "2026/11/03",
+    type: "保費/費用扣除",
+    category: "fee",
+    targetCode: "TCTPL003",
+    targetName: "台灣股市50精選(3) (扣費順位 1 扣除)",
+    amount: 100,
+    fee: 100,
+    units: 0,
+    price: 0,
+    exchangeRate: 1,
+    summary: "保單管理費/保單管理費之行政管理費",
+    status: "已扣款完成"
+  },
+  {
+    id: "TX-20261103-FEE2",
+    date: "2026/11/03",
+    type: "保費/費用扣除",
+    category: "fee",
+    targetCode: "TCTPL003",
+    targetName: "台灣股市50精選(3) (扣費順位 1 扣除)",
+    amount: 3919,
+    fee: 3919,
+    units: 0,
+    price: 0,
+    exchangeRate: 1,
+    summary: "標的維護費/保單管理費/保單管理費之帳戶管理費",
+    status: "已扣款完成"
+  },
+  {
+    id: "TX-20261103-FEE3",
+    date: "2026/11/03",
+    type: "保費/費用扣除",
+    category: "fee",
+    targetCode: "TCTPL003",
+    targetName: "台灣股市50精選(3) (扣費順位 1 扣除)",
+    amount: 169,
+    fee: 169,
+    units: 0,
+    price: 0,
+    exchangeRate: 1,
+    summary: "保險成本",
+    status: "已扣款完成"
+  },
+  {
+    id: "TX-20261106-DIV01",
+    date: "2026/11/06",
+    type: "現金配息",
+    category: "dividend",
+    targetCode: "ALL3",
+    targetName: "三大旗艦多重資產基金 (安聯+聯博+富蘭克林華美)",
+    amount: 8693,
+    fee: 0,
+    units: 0,
+    price: 0,
+    exchangeRate: 1,
+    summary: "首期收益分配提減撥回(現金)款項",
+    status: "已匯入客戶銀行帳戶"
   }
 ];
 
@@ -267,16 +382,38 @@ function renderManagerRadar() {
   const f = globalAccountData.financials;
   if (!f) return;
 
-  const currentNav = f.currentAccountValue || 2003461;
+  const currentNav = f.currentAccountValue || 1926349;
   const yellowBuffer = currentNav - 1940000;
+  const orangeBuffer = currentNav - 1880000;
   const redBuffer = currentNav - 1800000;
 
   const tw50 = (globalAccountData.holdings || []).find(h => h.code === "TCTPL003");
-  const tw50Val = tw50 ? tw50.currentValue : 202885;
+  const tw50Val = tw50 ? tw50.currentValue : 192635;
+
+  const radarSignalPill = document.getElementById("radarSignalPill");
+  if (radarSignalPill) {
+    if (currentNav < 1940000 && currentNav >= 1880000) {
+      radarSignalPill.className = "radar-signal-pill pill-yellow";
+      radarSignalPill.innerHTML = `<span class="radar-pulse-dot" style="background: #d97706; box-shadow: 0 0 0 2px rgba(217, 119, 6, 0.25);"></span><span>🟡 黃燈 · 一級警戒 / 戰術減震模式</span>`;
+    } else if (currentNav < 1880000 && currentNav >= 1800000) {
+      radarSignalPill.className = "radar-signal-pill pill-orange";
+      radarSignalPill.innerHTML = `<span class="radar-pulse-dot" style="background: #ea580c; box-shadow: 0 0 0 2px rgba(234, 88, 12, 0.25);"></span><span>🟠 橘燈 · 二級防禦 / 減震鎖本模式</span>`;
+    } else if (currentNav < 1800000) {
+      radarSignalPill.className = "radar-signal-pill pill-red";
+      radarSignalPill.innerHTML = `<span class="radar-pulse-dot" style="background: #dc2626; box-shadow: 0 0 0 2px rgba(220, 38, 38, 0.25);"></span><span>🔴 紅燈 · 三級極限 / 防空洞模式</span>`;
+    } else {
+      radarSignalPill.className = "radar-signal-pill";
+      radarSignalPill.innerHTML = `<span class="radar-pulse-dot"></span><span>🟢 綠燈 · 常態巡航模式 (健康運作中)</span>`;
+    }
+  }
 
   const radarYellowEl = document.getElementById("radarYellowBuffer");
   if (radarYellowEl) {
-    radarYellowEl.textContent = `+${formatCurrency(yellowBuffer)} (+${((yellowBuffer / currentNav) * 100).toFixed(2)}%)`;
+    if (yellowBuffer < 0) {
+      radarYellowEl.innerHTML = `<span style="color: #d97706;">已觸發一級警戒 (${formatCurrency(yellowBuffer)})</span>`;
+    } else {
+      radarYellowEl.textContent = `+${formatCurrency(yellowBuffer)} (+${((yellowBuffer / currentNav) * 100).toFixed(2)}%)`;
+    }
   }
 
   const radarRedEl = document.getElementById("radarRedBuffer");
@@ -286,7 +423,14 @@ function renderManagerRadar() {
 
   const radarMoatEl = document.getElementById("radarMoatLevel");
   if (radarMoatEl) {
-    radarMoatEl.textContent = `${formatCurrency(tw50Val)} (安全充足)`;
+    radarMoatEl.textContent = `${formatCurrency(tw50Val)} (已扣繳 NT$ 8,449 費用)`;
+  }
+
+  const radarDirective = document.getElementById("radarDirective");
+  if (radarDirective) {
+    if (currentNav < 1940000) {
+      radarDirective.innerHTML = `<span style="color: #fbbf24;">高頻防禦監控 · 保護高息本金</span>`;
+    }
   }
 }
 
@@ -295,20 +439,26 @@ function renderWarRoom() {
   const f = globalAccountData.financials;
   if (!f) return;
 
-  const currentNav = f.currentAccountValue || 2003461;
+  const currentNav = f.currentAccountValue || 1926349;
   const yellowBuffer = currentNav - 1940000;
   const orangeBuffer = currentNav - 1880000;
   const redBuffer = currentNav - 1800000;
 
   const tw50 = (globalAccountData.holdings || []).find(h => h.code === "TCTPL003");
-  const tw50Val = tw50 ? tw50.currentValue : 202885;
-  const tw50Units = tw50 ? tw50.units : 3230.104392;
+  const tw50Val = tw50 ? tw50.currentValue : 192635;
+  const tw50Units = tw50 ? tw50.units : 3121.6172;
 
   const warroomTotalEl = document.getElementById("warroomTotalValuation");
   if (warroomTotalEl) warroomTotalEl.textContent = formatCurrency(currentNav);
 
   const warroomYellowEl = document.getElementById("warroomYellowBuffer");
-  if (warroomYellowEl) warroomYellowEl.textContent = `+${formatCurrency(yellowBuffer)} (+${((yellowBuffer / currentNav) * 100).toFixed(2)}%)`;
+  if (warroomYellowEl) {
+    if (yellowBuffer < 0) {
+      warroomYellowEl.textContent = `已觸發一級警戒 (${formatCurrency(yellowBuffer)})`;
+    } else {
+      warroomYellowEl.textContent = `+${formatCurrency(yellowBuffer)} (+${((yellowBuffer / currentNav) * 100).toFixed(2)}%)`;
+    }
+  }
 
   const warroomOrangeEl = document.getElementById("warroomOrangeBuffer");
   if (warroomOrangeEl) warroomOrangeEl.textContent = `+${formatCurrency(orangeBuffer)} (+${((orangeBuffer / currentNav) * 100).toFixed(2)}%)`;
@@ -320,44 +470,67 @@ function renderWarRoom() {
   if (warroomMoatValEl) warroomMoatValEl.textContent = formatCurrency(tw50Val);
 
   const warroomMoatUnitsEl = document.getElementById("warroomMoatUnits");
-  if (warroomMoatUnitsEl) warroomMoatUnitsEl.textContent = `${formatNumber(tw50Units, 4)} 單位`;
+  if (warroomMoatUnitsEl) warroomMoatUnitsEl.textContent = `${formatNumber(tw50Units, 4)} 單位 (已扣除 NT$ 8,449 費用)`;
 }
 
 // 渲染 KPI 指標卡片
 function renderKPIs() {
   const f = globalAccountData.financials;
+  if (!f) return;
   
-  // 保單帳戶總價值
+  // 1. 保單帳戶總價值
   const totalValEl = document.getElementById("totalValuation");
   if (totalValEl) totalValEl.textContent = formatCurrency(f.currentAccountValue);
 
   const totalCostEl = document.getElementById("totalCost");
   if (totalCostEl) {
-    totalCostEl.textContent = `原始躉繳: ${formatCurrency(f.singlePremium)} (帳面增值 +${formatCurrency(f.accountNetGrowth)})`;
+    const sign = f.accountNetGrowth >= 0 ? "+" : "";
+    totalCostEl.textContent = `原始躉繳: ${formatCurrency(f.singlePremium)} (帳面變動 ${sign}${formatCurrency(f.accountNetGrowth)})`;
   }
 
-  // 投資部位未實現損益
-  const unrealizedGainEl = document.getElementById("unrealizedGain");
-  if (unrealizedGainEl) {
-    const sign = f.totalUnrealizedGain >= 0 ? "+" : "";
-    unrealizedGainEl.textContent = `${sign}${formatCurrency(f.totalUnrealizedGain)} (${sign}${f.totalRoi.toFixed(2)}%)`;
+  // 2. 累計已領現金配息
+  const totalDividendsEl = document.getElementById("totalDividends");
+  if (totalDividendsEl) {
+    totalDividendsEl.textContent = formatCurrency(f.accumulatedDividendsCash);
   }
 
-  const gainDescEl = document.getElementById("gainDesc");
-  if (gainDescEl) {
-    gainDescEl.textContent = `淨投資: ${formatCurrency(f.netInvestmentCost)} · 台股領漲 +1.92%`;
+  const dividendDescEl = document.getElementById("dividendDesc");
+  if (dividendDescEl) {
+    dividendDescEl.innerHTML = `<i class="fa-solid fa-check"></i> 首期配息已入帳 · 年化約 7~8% 現金流`;
   }
 
-  // 預估月配息現金流
-  const estDividendEl = document.getElementById("estimatedDividend");
-  if (estDividendEl) {
-    estDividendEl.textContent = `約 NT$ ${f.estimatedMonthlyDividendMin.toLocaleString()} ~ ${f.estimatedMonthlyDividendMax.toLocaleString()}`;
+  // 3. 保單支出費用總額
+  const totalDeductionsEl = document.getElementById("totalDeductions");
+  if (totalDeductionsEl) {
+    totalDeductionsEl.textContent = formatCurrency(f.insuranceFeesDeducted || 8449);
   }
 
-  // 身故保障總額
+  const deductionDescEl = document.getElementById("deductionDesc");
+  if (deductionDescEl) {
+    deductionDescEl.textContent = `累計 6 筆扣款 · 順位 1 台股50優先支應`;
+  }
+
+  // 4. 含息實質總權益
+  const clientEquityEl = document.getElementById("clientEquity");
+  if (clientEquityEl) {
+    clientEquityEl.textContent = formatCurrency(f.totalClientEquity || 1935042);
+  }
+
+  const equityDescEl = document.getElementById("equityDesc");
+  if (equityDescEl) {
+    const retSign = (f.totalReturnWithCash || -64958) >= 0 ? "+" : "";
+    equityDescEl.textContent = `含息損益: ${retSign}${formatCurrency(f.totalReturnWithCash)} (${retSign}${f.totalReturnRateWithCash.toFixed(2)}%)`;
+  }
+
+  // 5. 壽險身故保障總額
   const deathBenefitEl = document.getElementById("deathBenefit");
   if (deathBenefitEl) {
-    deathBenefitEl.textContent = formatCurrency(f.lifeDeathBenefit);
+    deathBenefitEl.textContent = formatCurrency(f.lifeDeathBenefit || 2791307);
+  }
+
+  const deathBenefitDescEl = document.getElementById("deathBenefitDesc");
+  if (deathBenefitDescEl) {
+    deathBenefitDescEl.textContent = `基本保額 280 萬 - 已領現金 NT$ 8,693`;
   }
 }
 
@@ -372,7 +545,7 @@ function renderHoldingsTable() {
     const tr = document.createElement("tr");
 
     const gainSign = h.unrealizedGain > 0 ? "+" : "";
-    const gainColorClass = h.unrealizedGain > 0 ? "text-emerald" : "text-secondary";
+    const gainColorClass = h.unrealizedGain > 0 ? "text-emerald" : (h.unrealizedGain < 0 ? "text-rose" : "text-secondary");
 
     const badgeClass = h.priority === 1 ? "badge-primary" : "badge-emerald";
 
@@ -418,6 +591,8 @@ function renderTransactionsTable(filter = "all") {
     if (filter === "all") return true;
     if (filter === "buy") return tx.category === "buy";
     if (filter === "premium") return tx.category === "premium";
+    if (filter === "fee") return tx.category === "fee";
+    if (filter === "dividend") return tx.category === "dividend";
     return true;
   });
 
@@ -427,6 +602,8 @@ function renderTransactionsTable(filter = "all") {
     let badgeClass = "badge-primary";
     if (tx.category === "premium") badgeClass = "badge-gold";
     if (tx.category === "buy") badgeClass = "badge-cyan";
+    if (tx.category === "fee") badgeClass = "badge-rose";
+    if (tx.category === "dividend") badgeClass = "badge-emerald";
 
     tr.innerHTML = `
       <td><span style="font-size: 12px; color: var(--text-muted); font-family: monospace;">${tx.id}</span></td>
@@ -434,7 +611,7 @@ function renderTransactionsTable(filter = "all") {
       <td><span class="badge ${badgeClass}">${tx.type}</span></td>
       <td>
         <div style="font-weight: 600;">${tx.targetName}</div>
-        <div style="font-size: 11px; color: var(--text-muted); font-family: monospace;">${tx.targetCode}</div>
+        <div style="font-size: 11px; color: var(--text-muted); font-family: monospace;">${tx.targetCode} · ${tx.summary}</div>
       </td>
       <td style="font-weight: 800;">${formatCurrency(tx.amount)}</td>
       <td>${tx.units > 0 ? formatNumber(tx.units, 4) : "-"}</td>

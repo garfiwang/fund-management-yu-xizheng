@@ -53,7 +53,7 @@
           <span class="status-dot"></span>
           <span>正常繳清 · 契約有效</span>
         </div>
-        <span class="update-tag" id="lastUpdatedText">評價基準日: 2026/10/30</span>
+        <span class="update-tag" id="lastUpdatedText">評價基準日: 2026/11/12</span>
       </div>
     </header>
 
@@ -104,9 +104,9 @@
           </div>
         </div>
         <div class="radar-status-indicator">
-          <div class="radar-signal-pill">
-            <span class="radar-pulse-dot"></span>
-            <span>🟢 綠燈 · 常態巡航模式 (健康運作中)</span>
+          <div class="radar-signal-pill pill-yellow" id="radarSignalPill">
+            <span class="radar-pulse-dot" style="background: #d97706; box-shadow: 0 0 0 2px rgba(217, 119, 6, 0.25);"></span>
+            <span>🟡 黃燈 · 一級警戒 / 戰術減震模式</span>
           </div>
           <a href="manager_war_room.html" class="radar-action-btn">
             <i class="fa-solid fa-shield-halved"></i> 進入作戰室
@@ -116,24 +116,24 @@
 
       <div class="radar-grid">
         <div class="radar-stat-box">
-          <span class="radar-stat-label"><i class="fa-solid fa-flag-checkered"></i> 距首道黃燈防線緩衝 (Buffer)</span>
-          <span class="radar-stat-val" id="radarYellowBuffer">+NT$ 63,461 (+3.17%)</span>
+          <span class="radar-stat-label"><i class="fa-solid fa-flag-checkered"></i> 距首道黃燈防線緩衝</span>
+          <span class="radar-stat-val" id="radarYellowBuffer" style="color: #d97706;">已觸發一級警戒 (-NT$ 13,651)</span>
           <span class="radar-stat-sub">黃燈門檻 NT$ 1,940,000 (-3.0%)</span>
         </div>
         <div class="radar-stat-box">
-          <span class="radar-stat-label"><i class="fa-solid fa-triangle-exclamation"></i> 距終極紅燈防線緩衝</span>
-          <span class="radar-stat-val" id="radarRedBuffer">+NT$ 203,461 (+10.16%)</span>
-          <span class="radar-stat-sub">鋼鐵止損門檻 NT$ 1,800,000 (-10%)</span>
+          <span class="radar-stat-label"><i class="fa-solid fa-shield-virus"></i> 距二級橘燈防線緩衝</span>
+          <span class="radar-stat-val" id="radarOrangeBuffer" style="color: #ea580c;">+NT$ 46,349 (+2.41%)</span>
+          <span class="radar-stat-sub">橘燈門檻 NT$ 1,880,000 (-6.0%)</span>
         </div>
         <div class="radar-stat-box">
           <span class="radar-stat-label"><i class="fa-solid fa-cubes-stacked"></i> 順位 1 台股50扣費水庫</span>
-          <span class="radar-stat-val" id="radarMoatLevel">NT$ 202,885 (安全充足)</span>
-          <span class="radar-stat-sub">支應 1,014 個月 · 100% 保護 180 萬高息本金</span>
+          <span class="radar-stat-val" id="radarMoatLevel">NT$ 192,635 (運作充裕)</span>
+          <span class="radar-stat-sub">已扣繳費用 NT$ 8,449 · 100% 保護 180 萬高息本金</span>
         </div>
         <div class="radar-stat-box">
           <span class="radar-stat-label"><i class="fa-solid fa-compass"></i> 當前操盤指令</span>
-          <span class="radar-stat-val" style="font-size: 14px; font-weight: 700; color: #34d399;">維持 10% 成長 + 90% 高息</span>
-          <span class="radar-stat-sub">月領現金約 NT$ 10,500 ~ 12,000</span>
+          <span class="radar-stat-val" id="radarDirective" style="font-size: 14px; font-weight: 700; color: #fbbf24;">高頻防禦監控 · 保護高息本金</span>
+          <span class="radar-stat-sub">首期配息 NT$ 8,693 已全額入帳銀行</span>
         </div>
       </div>
     </section>
@@ -146,45 +146,57 @@
           <span class="metric-label">目前保單帳戶總價值</span>
           <div class="metric-icon"><i class="fa-solid fa-vault"></i></div>
         </div>
-        <div class="metric-value" id="totalValuation">NT$ 2,003,461</div>
+        <div class="metric-value" id="totalValuation">NT$ 1,926,349</div>
         <div class="metric-sub" id="totalCost">
-          原始躉繳: NT$ 2,000,000 (帳面增值 +NT$ 3,461)
+          原始躉繳: NT$ 2,000,000 (帳面變動 -NT$ 73,651)
         </div>
       </div>
 
-      <!-- Metric 2: Unrealized Gain -->
+      <!-- Metric 2: Accumulated Cash Dividend -->
       <div class="metric-card emerald">
         <div class="metric-header">
-          <span class="metric-label">投資部位未實現損益</span>
-          <div class="metric-icon"><i class="fa-solid fa-chart-line"></i></div>
-        </div>
-        <div class="metric-value text-emerald" id="unrealizedGain">+NT$ 3,820 (+0.19%)</div>
-        <div class="metric-sub text-emerald" id="gainDesc">
-          淨投資: NT$ 1,999,641 · 台股領漲 +1.92%
-        </div>
-      </div>
-
-      <!-- Metric 3: Estimated Monthly Dividend -->
-      <div class="metric-card cyan">
-        <div class="metric-header">
-          <span class="metric-label">預估每月配息現金流</span>
+          <span class="metric-label">累計已領現金配息</span>
           <div class="metric-icon"><i class="fa-solid fa-hand-holding-dollar"></i></div>
         </div>
-        <div class="metric-value text-cyan" id="estimatedDividend">約 NT$ 10,500 ~ 12,000</div>
-        <div class="metric-sub" id="dividendDesc">
-          依 3 檔配息基金 180 萬部位 (年化約 7~8%) 預估
+        <div class="metric-value text-emerald" id="totalDividends">NT$ 8,693</div>
+        <div class="metric-sub text-emerald" id="dividendDesc">
+          <i class="fa-solid fa-check"></i> 首期配息已入帳 · 年化約 7~8% 現金流
         </div>
       </div>
 
-      <!-- Metric 4: Death Benefit -->
+      <!-- Metric 3: Insurance Fees Deducted -->
+      <div class="metric-card rose">
+        <div class="metric-header">
+          <span class="metric-label">保單支出費用總額</span>
+          <div class="metric-icon"><i class="fa-solid fa-file-invoice-dollar"></i></div>
+        </div>
+        <div class="metric-value text-rose" id="totalDeductions">NT$ 8,449</div>
+        <div class="metric-sub" id="deductionDesc">
+          累計 6 筆扣款 · 順位 1 台股50優先支應
+        </div>
+      </div>
+
+      <!-- Metric 4: Client Total Equity -->
+      <div class="metric-card cyan">
+        <div class="metric-header">
+          <span class="metric-label">投資部位實質權益</span>
+          <div class="metric-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+        </div>
+        <div class="metric-value text-cyan" id="clientEquity">NT$ 1,935,042</div>
+        <div class="metric-sub" id="equityDesc">
+          含息損益: -NT$ 64,958 (-3.25%)
+        </div>
+      </div>
+
+      <!-- Metric 5: Death Benefit -->
       <div class="metric-card purple">
         <div class="metric-header">
           <span class="metric-label">人壽身故保障額度</span>
           <div class="metric-icon"><i class="fa-solid fa-shield-heart"></i></div>
         </div>
-        <div class="metric-value text-purple" id="deathBenefit">NT$ 2,800,000</div>
-        <div class="metric-sub">
-          保障槓桿比率 140% · 借款 NT$ 0 (0%)
+        <div class="metric-value text-purple" id="deathBenefit">NT$ 2,791,307</div>
+        <div class="metric-sub" id="deathBenefitDesc">
+          基本保額 280 萬 - 已領現金 NT$ 8,693
         </div>
       </div>
     </section>
@@ -212,7 +224,7 @@
             <i class="fa-solid fa-chart-simple"></i>
             <span>各標的申購成本 vs 目前帳戶現值</span>
           </div>
-          <span class="badge badge-primary">台股50精選增值中</span>
+          <span class="badge badge-primary">台股50精選扣費防線</span>
         </div>
         <div class="chart-wrapper">
           <canvas id="performanceChart"></canvas>
@@ -262,13 +274,15 @@
             <i class="fa-solid fa-receipt"></i>
             <span>保單交易與投資帳務流水 (Transactions)</span>
           </div>
-          <span class="badge badge-gold" id="transactionsCount">共 5 筆明細</span>
+          <span class="badge badge-gold" id="transactionsCount">共 12 筆明細</span>
         </div>
         
         <!-- Filter Buttons -->
         <div class="filter-bar">
-          <button class="filter-btn active" onclick="filterTransactions('all', this)">全部明細 (5)</button>
+          <button class="filter-btn active" onclick="filterTransactions('all', this)">全部明細 (12)</button>
+          <button class="filter-btn" onclick="filterTransactions('fee', this)">保單費用扣除 (6)</button>
           <button class="filter-btn" onclick="filterTransactions('buy', this)">標的申購 (4)</button>
+          <button class="filter-btn" onclick="filterTransactions('dividend', this)">現金配息 (1)</button>
           <button class="filter-btn" onclick="filterTransactions('premium', this)">保費躉繳 (1)</button>
         </div>
 

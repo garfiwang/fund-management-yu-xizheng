@@ -78,23 +78,23 @@
       <div class="fund-stats-strip">
         <div class="stat-item">
           <span class="stat-item-label">持有單位數餘額</span>
-          <span class="stat-item-value">73,373.1051 單位</span>
+          <span class="stat-item-value">73,373.1051 單位 (零侵蝕)</span>
         </div>
         <div class="stat-item">
           <span class="stat-item-label">買入平均成本 (10/27)</span>
           <span class="stat-item-value">NT$ 8.1800</span>
         </div>
         <div class="stat-item">
-          <span class="stat-item-label">最新官方淨值 (10/27)</span>
-          <span class="stat-item-value" style="color: var(--color-emerald);">NT$ 8.1800</span>
+          <span class="stat-item-label">最新官方淨值 (11/12)</span>
+          <span class="stat-item-value" style="color: var(--color-emerald);">NT$ 7.8762</span>
         </div>
         <div class="stat-item">
           <span class="stat-item-label">目前帳戶現值</span>
-          <span class="stat-item-value">NT$ 600,192</span>
+          <span class="stat-item-value">NT$ 577,905</span>
         </div>
         <div class="stat-item">
-          <span class="stat-item-label">預估每月配息金額</span>
-          <span class="stat-item-value text-emerald">約 NT$ 3,900 ~ 4,300</span>
+          <span class="stat-item-label">首期月配息 (已入帳)</span>
+          <span class="stat-item-value text-emerald">約 NT$ 3,200 (現金)</span>
         </div>
       </div>
     </div>
@@ -195,10 +195,10 @@
       new Chart(ctx, {
         type: 'line',
         data: {
-          labels: ['10/01', '10/05', '10/10', '10/15', '10/20', '10/25', '10/27 (買入)'],
+          labels: ['10/01', '10/15', '10/27 (買入)', '11/03', '11/06 (除息)', '11/12 (最新)'],
           datasets: [{
             label: '官方單位淨值 (TWD)',
-            data: [8.12, 8.15, 8.14, 8.16, 8.17, 8.175, 8.1800],
+            data: [8.12, 8.16, 8.1800, 8.15, 7.92, 7.8762],
             borderColor: '#059669',
             backgroundColor: 'rgba(5, 150, 105, 0.08)',
             borderWidth: 2.5,
